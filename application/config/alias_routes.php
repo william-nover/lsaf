@@ -1,0 +1,1 @@
+<?php $route["terms-condition"] = "pages/detail/11"; $route["privacy-policy"] = "pages/detail/12";  ?>

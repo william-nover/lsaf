@@ -1,0 +1,24 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1460204867606945";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="sosmed">
+    	<h1> SOCIAL MEDIA LIVE FEEDS </h1>
+        <div class="space-for-fb">
+<div class="fb-page" data-href="https://www.facebook.com/pmkri.jakpus/" data-tabs="timeline" data-width="310" data-height="410" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pmkri.jakpus/"><a href="https://www.facebook.com/pmkri.jakpus/">PMKRI Cabang Jakarta Pusat</a></blockquote></div></div>
+        </div>
+        
+        <div class="space-for-in">
+		<a href="https://id.linkedin.com/pub/lsaf-london-school-of-accountancy-and-finance/b8/629/823" style="text-decoration:none;"><span style="font: 80% Arial,sans-serif; color:#0783B6;"><img src="<?php echo IMAGES_BASE_URL;?>/sosmed-2.png"></span></a>
+		</div>
+        
+        
+        <div class="space-for-tw">
+        	<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/LSAF_JKT" data-widget-id="664677936214188033">Tweets by @LSAF_JKT</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+    </div>

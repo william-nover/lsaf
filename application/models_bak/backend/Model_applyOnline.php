@@ -1,0 +1,64 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Model_applyOnline extends CI_Model {
+
+    function __construct()
+    {
+        parent::__construct();
+    }
+	
+	function getListApplyOnline($cond = null){
+		 $query		= "select a.* , b.country_name FROM tbl_signup as a inner join tbl_country as b"
+                                . " on a.country_id = b.country_id  ".$cond;
+		$query		= $this->db->query($query)->result_array();
+		
+		return $query;
+	}
+	
+	
+	
+	function getApplyOnline($id = '')
+	{
+		$where = '';
+		if($id != ''){
+			$where = "WHERE signup_id = ".$id;
+		}
+		$sql	= "SELECT signup_id, full_name, email, step, status
+				  FROM tbl_signup $where ORDER BY signup_id ASC";	
+		$query	= $this->db->query($sql);
+		$rs		= $query->result_array(); 
+		
+		return $rs;	
+	}
+	
+	function activeApplyOnline($id)
+	{
+		$sql	= "UPDATE tbl_signup SET status = abs(status-1),  
+				   applyOnline_update_date = now(), 
+				   applyOnline_update_by = ".$_SESSION['admin_data']['user_id']."
+				   WHERE signup_id = ".$id;	
+		$query	= $this->db->query($sql);
+		
+		return $query;
+	}
+	
+	function deleteApplyOnline($id = '')
+	{
+		$sql	= "DELETE FROM tbl_signup WHERE signup_id = ".$id;	
+		$query	= $this->db->query($sql);
+		
+		$str = $this->db->last_query();
+		
+		return $str;
+	}
+	
+	function checkApplyOnline($applyOnlinetitle){
+		$sql	= "SELECT full_name FROM tbl_signup WHERE full_name = '".$applyOnlinetitle."'";
+		$query	= $this->db->query($sql);
+		$rs		= $query->result_array(); 
+
+		return $rs;
+	}
+	
+	
+}

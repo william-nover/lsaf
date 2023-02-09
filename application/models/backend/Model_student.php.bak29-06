@@ -1,0 +1,172 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Model_student extends CI_Model {
+
+    function __construct()
+    {
+        parent::__construct();
+    }
+        function getmoduleLevel(){
+            $data = array();
+            $sql = "Select module_level_id , module_level_title from tbl_module_level order by module_level_id Asc";         
+            $hasil = $this->db->query($sql);
+                        if($hasil->num_rows() > 0){
+				$data = $hasil->result();
+			}
+                        else{
+                            $data = '';
+                        }
+			$hasil->free_result();
+                        $this->db->close();
+			return $data;
+            
+        }
+     
+	function getListStudent($cond = null){
+            
+		  $query		= "SELECT a.student_id, a.module_level_id, a.student_name, a.student_pid,
+					 DATE_FORMAT(  a.student_create_date, '%d-%m-%Y %H:%i:%s' ) as student_create_date,a.student_active_status, a.student_create_by, b.module_level_title,
+                                         c.signup_id, c.full_name
+					 FROM tbl_student as a inner join tbl_module_level as b on a.module_level_id = b.module_level_id 
+                                         inner join tbl_signup as c on a.signup_id=c.signup_id ".$cond;		  
+		//echo $query."<br>";
+		$query		= $this->db->query($query)->result_array();
+		
+		return $query;
+	}
+
+	
+
+	
+	function getStudent($id = '')
+	{
+		$where = '';
+		if($id != ''){
+			$where = "WHERE student_id = ".$id;
+		}
+		 $sql	= "SELECT a.student_id, a.module_level_id, a.student_pid, a.student_name, a.student_active_status, b.full_name FROM tbl_student as a"
+                        . " inner join tbl_signup as b on a.signup_id=b.signup_id  $where ORDER BY student_id ASC";	
+		$query	= $this->db->query($sql);
+		$rs		= $query->result_array(); 
+		
+		return $rs;	
+	}
+	
+	
+	
+	function activeStudent($id)
+	{
+		$sql	= "UPDATE tbl_student SET student_active_status = abs(student_active_status-1),  
+				   student_update_date = now(), 
+				   student_update_by = ".$_SESSION['admin_data']['user_id']."
+				   WHERE student_id = ".$id;	
+		$query	= $this->db->query($sql);
+		
+		return $query;
+	}
+	
+	function deleteStudent($id)
+	{
+		$sql	= "DELETE FROM tbl_student WHERE student_id = ".$id;	
+		$query	= $this->db->query($sql);
+		
+		$str = $this->db->last_query();
+		
+		return $str;
+	}
+	
+	function deleteStudentLang($id)
+	{
+		$sql	= "DELETE FROM tbl_student_lang WHERE student_id = ".$id;	
+		$query	= $this->db->query($sql);
+		
+		$str = $this->db->last_query();
+		
+		return $str;
+	}
+	
+	function checkStudent($student_name){
+		$sql	= "SELECT * FROM tbl_student WHERE student_name = '".$student_name."'";
+		$query	= $this->db->query($sql);
+		$rs		= $query->result_array(); 
+
+		return $rs;
+	}
+	
+	function checkStudentLang($student_namelang){
+		$sql	= "SELECT * FROM tbl_student_lang WHERE student_lang_title = '".$student_namelang."'";
+		$query	= $this->db->query($sql);
+		$rs		= $query->result_array(); 
+
+		return $rs;
+	}
+	
+	function insertStudent($module_level_id, $signup_id)
+	{
+            echo $module_level_id;
+		echo $sql	= "INSERT INTO tbl_student SET module_level_id = '".$module_level_id."', signup_id = '".$signup_id."',
+					student_active_status = 0,
+					student_create_by = ".$_SESSION['admin_data']['user_id'].", student_create_date = now()";	
+		$query  = $this->db->query($sql);
+		$last_id  = $this->db->insert_id();
+		
+		return $last_id;
+	}
+	
+
+	
+	function updateStudent($id,$module_level_id,$student_pid)
+	{
+		$sql	= "UPDATE tbl_student SET 
+				    student_pid='".$student_pid."', module_level_id='".$module_level_id."',
+				   student_update_by = ".$_SESSION['admin_data']['user_id'].", student_update_date=now() WHERE student_id = ".$id;	
+		$query	= $this->db->query($sql);
+		
+		return $query;
+	}
+	
+	function updateStudentDefault($id,$student_name)
+	{
+		$sql	= "UPDATE tbl_student SET 
+				   student_name='".$student_name."', 
+				   student_update_by = ".$_SESSION['admin_data']['user_id'].", student_update_date=now() WHERE student_id = ".$id;	
+		$query	= $this->db->query($sql);
+		
+		return $query;
+	}
+	
+	function updateStudentLang($student_name,$subjectid,$languageid)
+	{
+		$sql	= "UPDATE tbl_student_lang SET 
+				   student_lang_title='".$student_name."', 
+				   student_lang_update_by = ".$_SESSION['admin_data']['user_id'].", student_lang_update_date=now() 
+				   WHERE student_id = ".$subjectid." AND language_id = ".$languageid;	
+
+		$query	= $this->db->query($sql);
+		
+		return $query;
+	}
+	
+	function updateStudentLangID($id, $student_namelang)
+	{
+		$sql	= "UPDATE tbl_student_lang SET 
+				   student_lang_title='".$student_namelang."', 
+				   student_lang_update_by = ".$_SESSION['admin_data']['user_id'].", student_lang_update_date=now() 
+				   WHERE student_lang_id = ".$id;	
+
+		$query	= $this->db->query($sql);
+		
+		return $query;
+	}
+	
+	function updateOrderStudent($id,$order)
+	{
+		$sql	= "UPDATE tbl_student SET 
+				   student_order= ".$order.",
+				   student_update_by = ".$_SESSION['admin_data']['user_id'].", student_update_date=now() WHERE student_id = ".$id;	
+		$query	= $this->db->query($sql);
+		
+		return $query;
+	}
+       
+}

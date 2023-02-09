@@ -1,0 +1,14 @@
+[02-May-2019 10:25:53 UTC] PHP Warning:  require(core/bootstrap.php): failed to open stream: No such file or directory in /home/lsafglob/public_html/assets/tools/kcfinder/browse.php on line 15
+[02-May-2019 10:25:53 UTC] PHP Fatal error:  require(): Failed opening required 'core/bootstrap.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/lsafglob/public_html/assets/tools/kcfinder/browse.php on line 15
+[02-May-2019 10:25:55 UTC] PHP Warning:  require(core/bootstrap.php): failed to open stream: No such file or directory in /home/lsafglob/public_html/assets/tools/kcfinder/browse.php on line 15
+[02-May-2019 10:25:55 UTC] PHP Fatal error:  require(): Failed opening required 'core/bootstrap.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/lsafglob/public_html/assets/tools/kcfinder/browse.php on line 15
+[02-May-2019 10:25:56 UTC] PHP Warning:  require(core/bootstrap.php): failed to open stream: No such file or directory in /home/lsafglob/public_html/assets/tools/kcfinder/browse.php on line 15
+[02-May-2019 10:25:56 UTC] PHP Fatal error:  require(): Failed opening required 'core/bootstrap.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/lsafglob/public_html/assets/tools/kcfinder/browse.php on line 15
+[02-May-2019 10:25:56 UTC] PHP Warning:  require(core/bootstrap.php): failed to open stream: No such file or directory in /home/lsafglob/public_html/assets/tools/kcfinder/browse.php on line 15
+[02-May-2019 10:25:56 UTC] PHP Fatal error:  require(): Failed opening required 'core/bootstrap.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/lsafglob/public_html/assets/tools/kcfinder/browse.php on line 15
+[02-May-2019 10:25:58 UTC] PHP Warning:  require(core/bootstrap.php): failed to open stream: No such file or directory in /home/lsafglob/public_html/assets/tools/kcfinder/browse.php on line 15
+[02-May-2019 10:25:58 UTC] PHP Fatal error:  require(): Failed opening required 'core/bootstrap.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/lsafglob/public_html/assets/tools/kcfinder/browse.php on line 15
+[02-May-2019 10:26:02 UTC] PHP Warning:  require(core/bootstrap.php): failed to open stream: No such file or directory in /home/lsafglob/public_html/assets/tools/kcfinder/browse.php on line 15
+[02-May-2019 10:26:02 UTC] PHP Fatal error:  require(): Failed opening required 'core/bootstrap.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/lsafglob/public_html/assets/tools/kcfinder/browse.php on line 15
+[01-Mar-2020 21:08:55 UTC] PHP Warning:  require(core/bootstrap.php): failed to open stream: No such file or directory in /home/lsafglob/public_html/assets/tools/kcfinder-bak/browse.php on line 15
+[01-Mar-2020 21:08:55 UTC] PHP Fatal error:  require(): Failed opening required 'core/bootstrap.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/lsafglob/public_html/assets/tools/kcfinder-bak/browse.php on line 15

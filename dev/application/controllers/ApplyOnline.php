@@ -1,0 +1,145 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class ApplyOnline extends MY_Controller {
+	public $data = array();
+	
+	public function __construct()
+	{
+		parent::__construct();
+			session_start();
+			date_default_timezone_set('UTC');
+			$this->load->model(array('backend/Model_menu_frontend','backend/Model_logcms','web/Model_apply','web/Model_entry'));
+			$this->load->helper(array('funcglobal','menu','accessprivilege','alias','email'));               
+    }
+	
+	public function index(){       
+        include 'checkSession.php'; 
+                      
+		$this->load->view('vApplyOnline',$this->data);
+	}
+    
+    public function Signup(){
+		$this->data['title'] = "Signup";
+		include 'checkSession.php'; 
+                
+		$this->data['Nationality'] = $this->Model_apply->getNationality();
+
+		if ($_POST) {
+			$full_name = $this->security->xss_clean(secure_input($_POST['full_name'])); 
+			$email = $this->security->xss_clean(secure_input($_POST['email'])); 
+			$date_day = $this->security->xss_clean(secure_input($_POST['date_day'])); 
+			$date_month = $this->security->xss_clean(secure_input($_POST['date_month'])); 
+			$date_year = $this->security->xss_clean(secure_input($_POST['date_year'])); 
+			$phone1 = $this->security->xss_clean(secure_input($_POST['phone1'])); 
+			$phone2 = $this->security->xss_clean(secure_input($_POST['phone2'])); 
+			$address1 = $this->security->xss_clean(secure_input($_POST['addr1'])); 
+			$address2 = $this->security->xss_clean(secure_input($_POST['addr2'])); 
+			$postal_code = $this->security->xss_clean(secure_input($_POST['postal_code']));                  
+			$country_id = $this->security->xss_clean(secure_input($_POST['country_id']));  
+			$today      = date("Y-m-d H:i:s"); 
+			$phone = $phone1.$phone2;
+			$time = strtotime($date_month.'/'.$date_day.'/'.$date_year);
+			$dob = date('Y-m-d',$time);
+			$passgenerate = random_string('alnum', 8);
+			$password = md5($passgenerate);
+
+			$this->form_validation->set_rules('full_name', 'full_name', 'required');
+			$this->form_validation->set_rules('phone1', 'phone1', 'required'); 
+			$this->form_validation->set_rules('phone2', 'phone2', 'required');
+			$this->form_validation->set_rules('addr1', 'addr1', 'required');
+			$this->form_validation->set_rules('postal_code', 'postal_code', 'required');
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+			//$this->form_validation->set_rules('email', 'Email', 'callback_email_check');
+			
+			if ($this->form_validation->run() == FALSE){
+				$this->data['emailExist']='';
+				$this->load->view('vSignUp',$this->data);
+			} else {    
+				$check_email = $this->Model_apply->checkEmail($email);
+				
+				if (count($check_email->result_array())>0){
+					$this->data['emailExist']='Email Already registered';
+					$this->load->view('vSignUp',$this->data);
+					return false;
+				} else{
+					$verificationCode = random_string('alnum', 20);                             
+
+					$signup_id =   $this->Model_apply->AddSignup($full_name,$email,$password,$dob,$address1,$address2,$postal_code,$phone,$country_id,$today,$verificationCode);
+					$register_id = 'LSAF-'.date("y").$signup_id;                                          
+					$this->Model_apply->setRegisterId($signup_id,$register_id);
+					$this->sendmail($full_name,$register_id,$email,$passgenerate,$verificationCode);
+
+					$this->load->view('vsuccessSignUp',$this->data);               
+				}
+			}		   
+		} else {
+			 $this->load->view('vSignUp',$this->data);   
+		}	               
+	}
+   
+        
+    function sendmail($full_name,$register_id,$email,$passgenerate,$verificationCode)  {    
+		$subject = "LSAF - Register conformation ";
+		$message_email = "Wellcome to LSAF"  .$full_name."<br>";
+		$message_email .= "Your Register ID : ".$register_id."<br>";
+		$message_email .= "Your signin account is<br>";
+		$message_email .= "Email : ".$email."<br>";
+		$message_email .= "Password : ".$passgenerate."<br>";
+		$message_email .= "Please click Link below to activation<br>";
+		$message_email .= BASE_URL."/ApplyOnline/verify/" .$verificationCode; 
+
+		$header = "";
+		$header .= "Reply-To: lsafglobal.com <noreply@".$_SERVER['SERVER_NAME'].">\r\n";
+		$header .= "Return-Path: lsafglobal.com <noreply@".$_SERVER['SERVER_NAME'].">\r\n";
+		$header .= "From: lsafglobal.com <noreply@".$_SERVER['SERVER_NAME'].">\r\n";
+		$header .= "Organization: ".$_SERVER['SERVER_NAME']." \r\n";
+		$header .= "X-Priority: 3\r\n";
+		$header .= "MIME-Version: 1.0\r\n";
+		$header .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		  
+		// Insert user record     
+		mail($email, $subject, $message_email, $header);
+	} 
+        
+	function verify($verificationText=NULL) {  			
+		if(!empty($verificationText)){
+			$rsGroup = $this->Model_entry->getGroup();
+			
+			if(count($rsGroup) > 0){
+				$entryGroupId = $rsGroup[0]['entry_group_id'];
+				
+				$noOfRecords = $this->Model_apply->verifyEmailAddress($verificationText,$entryGroupId);
+
+				if ($noOfRecords > 0) {  
+					$hasil = $this->Model_apply->getByVerify($verificationText);	
+					
+					if (!empty($hasil)){?>
+					<script type="text/javascript">
+					alert("register has been success please login to LSAF..!!!");			
+					</script>
+					<?php
+						redirect(BASE_URL.'/Mylsaf');
+					} else { ?>
+					<script type="text/javascript">
+								alert("Your register already verified please login to LSAF!!!");			
+					</script>
+					<?php
+						redirect(BASE_URL.'/Mylsaf');
+					}              
+				} else { ?>
+					<script type="text/javascript">
+								alert("Error verified login!!!");			
+					</script>
+				<?php  
+					redirect(BASE_URL.'/ApplyOnline');
+				} 
+			} else {
+				// Group Test Not Found
+				redirect(BASE_URL.'/ApplyOnline');
+			}
+		} else {
+			// No Parameter
+			redirect(BASE_URL.'/ApplyOnline');
+		}
+	}      
+}
