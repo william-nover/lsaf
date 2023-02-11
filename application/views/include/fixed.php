@@ -1,21 +1,19 @@
 <div class="right-fixed">
    <div class="acca-logo"></div>
    <?php if (!$email){ ?> 
-   <a href="<?php echo BASE_URL;?>/Location">
-      <div class="inquiry"><span>SUBMIT INQUIRY</span></div>
-   </a>
    <a href="<?php echo BASE_URL;?>/ApplyOnline">
       <div class="apply"><span>APPLY ONLINE</span></div>
    </a>
-   <a href="<?php echo BASE_URL;?>/brochure">
-      <div class="brochure"><span>BROCHURE</span></div>
+   <a href="<?php echo BASE_URL;?>/Location">
+      <div class="inquiry"/><span>SUBMIT INQUIRY</span></div>
+   </a>
+   <!-- <button id="myBtn">Open Modal</button> -->
+   <a href="#" id="myBtn">
+      <div class="brochure"/><span>BROCHURE</span></div>
    </a>
    <?php }   else {?>    
    <a href="<?php echo BASE_URL;?>/Location">
       <div class="inquiry"><span>SUBMIT INQUIRY</span></div>
-   </a>
-   <a href="<?php echo BASE_URL;?>/Location">
-      <div class="brochure"><span>BROCHURE</span></div>
    </a>
    <?php  }?>
  
@@ -31,9 +29,97 @@
             <a href="https://api.whatsapp.com/send?phone=+6287785477338&text=Hi LSAF, I want to ask you something."  target="_blank" title="whatsapp">
                 <img whatsapp wa-2 src="<?= IMAGES_BASE_URL;?>/wa2.png" alt="6287785477338">
             </a>
-        </li>        
+            </li>   
+     
      </ul>
 </div>
+<!-- Modal HTML -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <form class="row1" action="<?php echo site_url('controller/update_data'); ?>" method="post">
+      <div class="gender-group">
+        <label class="gender-label">Mr / Mrs / Ms *</label>
+        <input type="text" class="form-control" id="name" name="name" value="">
+      </div>
+      <div class="first-name-group">
+        <label class="first-name-label">First Name *</label>
+        <input type="text" class="form-control" id="name" name="name" value="">
+      </div>
+      <div class="last-name-group">
+        <label class="last-name-label">Last Name *</label>
+        <input type="text" class="form-control" id="name" name="name" value="">
+      </div>
+    </form>
+    <form class="row2" action="<?php echo site_url('controller/update_data'); ?>" method="post">
+      <div class="email-group">
+        <label class="email-label">Email *</label>
+        <input type="text" class="form-control" id="name" name="name" value="">
+      </div>
+      <div class="edu-group">
+        <label class="edu-label">Level of Education *</label>
+        <input type="text" class="form-control" id="dropdown" name="name" value="">
+        <ul id="options" style="display: none;">
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+        </ul>
+      </div>
+      <div class="campus-group">
+        <label class="campus-label">Select a SIS campus near you *</label>
+        <input type="text" class="form-control" id="dropdown" name="name" value="">
+        <ul id="options" style="display: none;">
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+        </ul>
+      </div>
+    </form>
+    <form class="row3" action="<?php echo site_url('controller/update_data'); ?>" method="post">
+        <button id="btnSubmit">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+
+  // When the user clicks the button, open the modal
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  $(".modal").click(function(e) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+    });
+
+    $("#dropdown").click(function() {
+  $("#options").toggle();
+});
+
+$("#options li").click(function() {
+  $("#dropdown").val($(this).text());
+  $("#options").hide();
+  $("#btnSubmit").click(function() {
+  // Submit the form or perform any other action you need here
+});
+});
+</script>
+
+
 
 <style>
     .ul_wa {
@@ -54,5 +140,164 @@
 .ul_wa > li a img {
     max-width: 100%;
     height: auto;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 300; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe; /*modal color */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    height: 250px; /* Could be more or less, depending on screen size */
+  }
+
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.gender-group {
+    text-align: center;
+    width: 24%;
+    margin-right: 3%;
+}
+.gender-label {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 30px;
+}
+.first-name-group {
+    text-align: center;
+    width: 33%;
+    margin-right: 3%;
+}
+.first-name-label {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.last-name-group {
+    text-align: center;
+    width: 33%;
+}
+.last-name-label {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+input[type="text"] {
+  width: 100%;
+}
+
+.edu-group {
+    text-align: center;
+    width: 24%;
+    margin-right: 3%;
+}
+.edu-label {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 30px;
+}
+.email-group {
+    text-align: center;
+    width: 33%;
+    margin-right: 3%;
+}
+.email-label {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.campus-group {
+    text-align: center;
+    width: 33%;
+}
+.campus-label {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.row1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.row2 {
+  display: flex;
+  flex-direction: row;
+}
+.row3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  z-index: 1;
+}
+
+#options li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#options li:hover {
+  background-color: #eee;
+}
+
+button#btnSubmit {
+  padding: 5px 10px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  width: 300px;
+  height: 45px;
+  text-align: center;
+  cursor: pointer;
 }
 </style>
