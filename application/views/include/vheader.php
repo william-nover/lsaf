@@ -19,60 +19,73 @@
  </div>
 <div class="clear"> </div>
 <header>
-    	<div class="header-left">
-        	<a href="<?php echo BASE_URL;?>"><img src="<?php echo IMAGES_BASE_URL;?>/logo-master.jpg"></a>
+    <div class="new-header">
+        <a href="<?php echo BASE_URL;?>"><img src="<?php echo IMAGES_BASE_URL;?>/logo-master.jpg" style="width:15%;aspect-ratio:1/2;object-fit:contain;"></a>
+    </div>
+    <div class="header-left">
+        <a href="<?php echo BASE_URL;?>"><img src="<?php echo IMAGES_BASE_URL;?>/logo-master.jpg"></a>
+    </div>
+    <div class="hide-mylsaf" style="display:none;"><a href="https://lsafglobal.wiziqxt.com/" target="_blank"> 
+        <img src="<?php echo IMAGES_BASE_URL;?>//mylsaf.gif"></a> 
+    </div>
+    <div class="header-right">
+        <a href="https://lsafglobal.wiziqxt.com/" target="_blank"><img src="<?php echo IMAGES_BASE_URL;?>/mylsaf.gif"></a>
+        <!--<a href="<?php //echo BASE_URL.'/Mylsaf';?>"><img src="<?php //echo IMAGES_BASE_URL;?>/mylsaf.gif"></a>-->
+        <div class="clear"> </div>
+        <?php 
+        $pathBannerHome = PATH_ASSETS."/json/menu.json";
+        $arrBannerHome = json_decode(file_get_contents($pathBannerHome),TRUE);
+        $Menu_all = $arrBannerHome;
+            ?>
+        
+        <div id='menu'>
+            <ul>
+                <li class="home-menu"><a href='<?php echo BASE_URL;?>'></a></li>
+                <?php foreach($Menu_all as $mall){ ?>                   
+                <?php if(empty($mall['child_first'])){  ?> 
+                <li><a href='<?php echo BASE_URL.'/'.$mall['menu_url'];?>'><?php echo $mall['menu_title'];?></a></li>
+                    <?php }else
+                        {?> 
+                <li class='active'><a href='<?php echo $mall['menu_url'];?>'><?php echo $mall['menu_title'];?></a>
+                    <ul>
+                    <?php foreach ($mall['child_first'] as $cf) { ?>
+                    <?php if(empty($cf['child_second'])){ ?>                         
+
+                        <li><a href='<?php echo $cf['menu_url'];?>'><?php echo $cf['menu_title'];?></a> </li>            
+
+                        <?php } else { ?>                         
+
+                        <li><a href='<?php echo $cf['menu_url'];?>'><?php echo $cf['menu_title'];?></a>
+                            <ul>
+                                <?php foreach ($cf['child_second'] as $cs) { ?>
+                                <li><a href='<?php echo $cs['menu_url'];?>'><?php echo $cs['menu_title'];?></a></li>
+                                <?php } ?>    
+                            </ul>
+                        </li>            
+
+                        <?php } ?>
+                        <?php } ?> 
+                    </ul>
+                </li>
+                <?php } ?> 
+                <?php } ?>
+                <?php if (!$email){ ?>
+                <li class='active'><a href='<?php echo BASE_URL;?>/ApplyOnline'>Apply Online</a></li>
+                <li class='active mylsaf' style="display:none;"><a href='<?php echo BASE_URL;?>/mylsaf'>My LSAF</a></li>
+                <?php } 
+                else {?>
+                <li class='active'><a href='<?php echo BASE_URL;?>/Signin/signout'>Logout</a></li>
+                <?php  }?>
+            <li class='active'><a href='<?php echo BASE_URL;?>/blog'>Blog</a></li>
+            </ul>
+            </div>
         </div>
-		<div class="hide-mylsaf" style="display:none;"><a href="https://lsafglobal.wiziqxt.com/" target="_blank"> <img src="<?php echo IMAGES_BASE_URL;?>//mylsaf.gif"></a> </div>
-    	<div class="header-right">
-        	<a href="https://lsafglobal.wiziqxt.com/" target="_blank"><img src="<?php echo IMAGES_BASE_URL;?>/mylsaf.gif"></a>
-        	<!--<a href="<?php //echo BASE_URL.'/Mylsaf';?>"><img src="<?php //echo IMAGES_BASE_URL;?>/mylsaf.gif"></a>-->
-            <div class="clear"> </div>
-            <?php 
-            $pathBannerHome = PATH_ASSETS."/json/menu.json";
-            $arrBannerHome = json_decode(file_get_contents($pathBannerHome),TRUE);
-            $Menu_all = $arrBannerHome;
-                ?>
-           
-            <div id='menu'>
-                <ul>
-                   <li class="home-menu"><a href='<?php echo BASE_URL;?>'></a></li>
-                   <?php foreach($Menu_all as $mall){ ?>                   
-                    <?php if(empty($mall['child_first'])){  ?> 
-                    <li><a href='<?php echo BASE_URL.'/'.$mall['menu_url'];?>'><?php echo $mall['menu_title'];?></a></li>
-                     <?php }else
-                         {?> 
-                    <li class='active'><a href='<?php echo $mall['menu_url'];?>'><?php echo $mall['menu_title'];?></a>
-                        <ul>
-                        <?php foreach ($mall['child_first'] as $cf) { ?>
-                        <?php if(empty($cf['child_second'])){ ?>                         
+</header>
 
-                           <li><a href='<?php echo $cf['menu_url'];?>'><?php echo $cf['menu_title'];?></a> </li>            
 
-                         <?php } else { ?>                         
-
-                           <li><a href='<?php echo $cf['menu_url'];?>'><?php echo $cf['menu_title'];?></a>
-                              <ul>
-                                  <?php foreach ($cf['child_second'] as $cs) { ?>
-                                 <li><a href='<?php echo $cs['menu_url'];?>'><?php echo $cs['menu_title'];?></a></li>
-                                  <?php } ?>    
-                              </ul>
-                           </li>            
-
-                         <?php } ?>
-                         <?php } ?> 
-                        </ul>
-                    </li>
-                  <?php } ?> 
-                    <?php } ?>
-                  <?php if (!$email){ ?>
-                  <li class='active'><a href='<?php echo BASE_URL;?>/ApplyOnline'>Apply Online</a></li>
-				  <li class='active mylsaf' style="display:none;"><a href='<?php echo BASE_URL;?>/mylsaf'>My LSAF</a></li>
-                    <?php } 
-                    else {?>
-                 <li class='active'><a href='<?php echo BASE_URL;?>/Signin/signout'>Logout</a></li>
-                    <?php  }?>
-                <li class='active'><a href='<?php echo BASE_URL;?>/blog'>Blog</a></li>
-                </ul>
-                </div>
-          </div>
-    </header>
+<style>
+    .new-header {
+        background-color: #071F89;
+        height:6em;
+    }
+</style>

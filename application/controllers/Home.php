@@ -16,11 +16,11 @@ class Home extends MY_Controller {
 		$this->data['title'] = "London School of Accountancy  And Finance";
 		include 'checkSession.php'; 
                 //Banner Home
-		 $pathBannerHome = PATH_ASSETS."/json/bannerhome.json";
+		 $pathBannerHome = PATH_ASSETS."/json/bannerhome.json"; 
                  $arrBannerHome = json_decode(file_get_contents($pathBannerHome),TRUE);
-//		echo'<pre>';
-//                 print_r($arrBannerHome);
-//                 die;
+		// echo'<pre>';
+        //         print_r($arrBannerHome);
+        //         die;
 		$arrBannerHomeNew = array();
 		if(count($arrBannerHome) > 0){
 			$keyArr = searchmanyarray(1, 'banner_type', $arrBannerHome,'banner_id');

@@ -1,1 +1,100 @@
-[{"banner_id":"16","banner_name":"","banner_active_status":"1","banner_images":"\/assets\/file_upload\/admin\/images\/banner\/LSAF-01.jpg","banner_type":"1","banner_url":"","banner_desc":"","banner_create_date":"16-02-2016 03:29:33","banner_create_by":"1"},{"banner_id":"15","banner_name":"banner01","banner_active_status":"1","banner_images":"\/assets\/file_upload\/admin\/images\/banner\/banner-lsaf01.jpg","banner_type":"1","banner_url":"","banner_desc":"","banner_create_date":"16-02-2016 03:29:02","banner_create_by":"1"},{"banner_id":"12","banner_name":"Viney Batia","banner_active_status":"1","banner_images":"\/assets\/file_upload\/admin\/images\/product\/acca-member-08.jpg","banner_type":"2","banner_url":"","banner_desc":"","banner_create_date":"13-11-2015 07:52:02","banner_create_by":"1"},{"banner_id":"10","banner_name":"Tan Sri Toni Fernandez","banner_active_status":"1","banner_images":"\/assets\/file_upload\/admin\/images\/product\/acca-member-07.jpg","banner_type":"2","banner_url":"","banner_desc":"","banner_create_date":"13-11-2015 07:50:30","banner_create_by":"1"},{"banner_id":"9","banner_name":"Tan Chin Poh","banner_active_status":"1","banner_images":"\/assets\/file_upload\/admin\/images\/product\/acca-member-06.jpg","banner_type":"2","banner_url":"","banner_desc":"","banner_create_date":"13-11-2015 07:49:55","banner_create_by":"1"},{"banner_id":"8","banner_name":"Rina Sampoerna","banner_active_status":"1","banner_images":"\/assets\/file_upload\/admin\/images\/banner\/Rina Sampoerna.jpg","banner_type":"2","banner_url":"","banner_desc":"","banner_create_date":"13-11-2015 07:48:57","banner_create_by":"1"},{"banner_id":"7","banner_name":"Irhoan Tanudiredja","banner_active_status":"1","banner_images":"\/assets\/file_upload\/admin\/images\/banner\/Irhoan Tanudiredja.jpg","banner_type":"2","banner_url":"","banner_desc":"","banner_create_date":"12-11-2015 02:06:34","banner_create_by":"1"},{"banner_id":"5","banner_name":"Ali Tahsen","banner_active_status":"1","banner_images":"\/assets\/file_upload\/admin\/images\/product\/acca-member-01.jpg","banner_type":"2","banner_url":"","banner_desc":"","banner_create_date":"12-11-2015 02:04:56","banner_create_by":"1"},{"banner_id":"3","banner_name":"Franky Jamin","banner_active_status":"1","banner_images":"\/assets\/file_upload\/admin\/images\/banner\/acca-member-03.jpg","banner_type":"2","banner_url":"","banner_desc":"","banner_create_date":"03-11-2015 15:46:36","banner_create_by":"1"}]
+[
+    {
+        "banner_id":"16",
+        "banner_name":"",
+        "banner_active_status":"1",
+        "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/banner\/\/lsaf-01.jpg",
+        "banner_type":"1",
+        "banner_url":"",
+        "banner_desc":"",
+        "banner_create_date":"16-02-2016 03:29:33",
+        "banner_create_by":"1"
+    },
+    {
+        "banner_id":"15",
+        "banner_name":"banner01",
+        "banner_active_status":"1",
+        "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/banner\/banner-\/lsaf01.jpg",
+        "banner_type":"1",
+        "banner_url":"",
+        "banner_desc":"",
+        "banner_create_date":"16-02-2016 03:29:02",
+        "banner_create_by":"1"
+    },
+    {
+        "banner_id":"12",
+        "banner_name":"Viney Batia",
+        "banner_active_status":"1",
+        "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/product\/acca-member-08.jpg",
+        "banner_type":"2",
+        "banner_url":"",
+        "banner_desc":"",
+        "banner_create_date":"13-11-2015 07:52:02",
+        "banner_create_by":"1"
+    },
+    {
+        "banner_id":"10",
+        "banner_name":"Tan Sri Toni Fernandez",
+        "banner_active_status":"1",
+        "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/product\/acca-member-07.jpg",
+        "banner_type":"2",
+        "banner_url":"",
+        "banner_desc":"",
+        "banner_create_date":"13-11-2015 07:50:30",
+        "banner_create_by":"1"
+    },
+    {
+        "banner_id":"9",
+        "banner_name":"Tan Chin Poh",
+        "banner_active_status":"1",
+        "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/product\/acca-member-06.jpg",
+        "banner_type":"2",
+        "banner_url":"",
+        "banner_desc":"",
+        "banner_create_date":"13-11-2015 07:49:55",
+        "banner_create_by":"1"
+    },
+    {
+        "banner_id":"8",
+        "banner_name":"Rina Sampoerna",
+        "banner_active_status":"1",
+        "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/banner\/Rina Sampoerna.jpg","banner_type":"2",
+        "banner_url":"",
+        "banner_desc":"",
+        "banner_create_date":"13-11-2015 07:48:57",
+        "banner_create_by":"1"
+    },
+        {
+            "banner_id":"7",
+            "banner_name":"Irhoan Tanudiredja",
+            "banner_active_status":"1",
+            "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/banner\/Irhoan Tanudiredja.jpg",
+            "banner_type":"2",
+            "banner_url":"",
+            "banner_desc":"",
+            "banner_create_date":"12-11-2015 02:06:34",
+            "banner_create_by":"1"
+        },
+        {
+            "banner_id":"5",
+            "banner_name":"Ali Tahsen",
+            "banner_active_status":"1",
+            "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/product\/acca-member-01.jpg",
+            "banner_type":"2",
+            "banner_url":"",
+            "banner_desc":"",
+            "banner_create_date":"12-11-2015 02:04:56",
+            "banner_create_by":"1"
+        },
+        {
+            "banner_id":"3",
+            "banner_name":"Franky Jamin",
+            "banner_active_status":"1",
+            "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/banner\/acca-member-03.jpg",
+            "banner_type":"2",
+            "banner_url":"",
+            "banner_desc":"",
+            "banner_create_date":"03-11-2015 15:46:36",
+            "banner_create_by":"1"
+        }
+]

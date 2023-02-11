@@ -1,5 +1,5 @@
  <div class="person">
-    	<h1> DO YOU WANT TO BE SUCCESSFUL LIKE ACCA MEMBERS?  </h1>
+    	<h1> DO YOU WANT TO BE SUCCESSFUL LIKE ACCA MEMBERS?</h1>
         <div class="person-responsive">           
         <?php if($countBannerHome > 0){ ?>
             <?php foreach($dataBannerHome as $banner){ ?>
@@ -8,7 +8,7 @@
             	<img src="<?php echo $banner['banner_images'];?>">
                 <div class="ket">
                     <h1> <?php echo $banner['banner_name'];?></h1>
-                    <div class="col col-lg-2"><?php echo html_entity_decode($banner['banner_desc']);?></div>
+                    <div class="col col-lg-2"><?php echo html_entity_decode($banner['banner_desc']);?></div> 
                 </div>
             </div>
             <?php } ?>
