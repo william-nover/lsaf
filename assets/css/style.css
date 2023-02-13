@@ -629,18 +629,20 @@ body {
 
 .header-left {
     width: 400px;
-    height: 150px;
+    height: 10px;
     float: left;
     background: #061F88
 }
 
 .header-right {
     width: 599px;
-    float: left
+    float: left;
+    background-color: #071F89;
+    height: 150px
 }
 
 .header-right img {
-    padding: 10px 20px 0 0;
+    padding: 10px 0px 0 0;
     float: right
 }
 
@@ -657,12 +659,11 @@ body {
 #menu ul,
 #menu ul li,
 #menu ul li a {
-    margin: -2px;
     padding: 0;
     border: 0;
     list-style: none;
     line-height: 1;
-    display: block;
+    display: inline;
     position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -684,9 +685,11 @@ body {
 }
 
 #menu {
-    width: 599px;
+    width: 999px;
     float: right;
-    margin-top: 20px;
+    padding-top: 14px;
+    padding-bottom: 10px;
+    background-color: #0F1B51;
     z-index: 100
 }
 
@@ -717,11 +720,11 @@ body {
 }
 
 #menu.align-right>ul>li {
-    float: rig ht
+    float: right
 }
 
 #menu>ul>li>a {
-    padding: 13px 12px 18px;
+    padding: 13px 35px 13px;
     font-size: 14px;
     color: #fff
 }
@@ -767,7 +770,8 @@ body {
 }
 
 #menu li:hover>ul {
-    left: auto
+    left: 20px;
+    top: 25px
 }
 
 #menu.align-right li:hover>ul {
@@ -790,6 +794,7 @@ body {
 }
 
 #menu ul ul li a {
+    display: block;
     border-bottom: 1px solid #fff;
     border-top: 1px solid #fff;
     margin-right: 2px;
@@ -799,7 +804,8 @@ body {
     font-size: 13px;
     color: #ddd;
     font-weight: 400;
-    background: #000
+    background: #071F89;
+    font-weight: bold;
 }
 
 #menu ul ul li.last-item>a,
@@ -3539,7 +3545,8 @@ table.gridtable td {
     .header-right {
         width: 100%;
         padding: 0;
-        margin: 0
+        margin: 0;
+        background-color: #071F89;
     }
 
     .intro-email,
@@ -3955,6 +3962,10 @@ only screen and (-o-min-device-pixel-ratio:2/1) and (max-width:1024px),
 only screen and (min-device-pixel-ratio:2) and (max-width:1024px),
 only screen and (min-resolution:192dpi) and (max-width:1024px),
 only screen and (min-resolution:2dppx) and (max-width:1024px) {
+    .Column .arrow {
+        display: none;
+    }
+
     .hide-mylsaf {
         display: block !important;
         float: left;
@@ -3996,6 +4007,7 @@ only screen and (min-resolution:2dppx) and (max-width:1024px) {
 
     #menu ul li a,
     #menu ul ul li a {
+        display: block;
         width: 100%;
         border-bottom: 0;
         background: #202024
@@ -4033,7 +4045,7 @@ only screen and (min-resolution:2dppx) and (max-width:1024px) {
         z-index: 5;
         display: block;
         padding: 25px;
-        margin-top: -70px;
+        margin-top: -90px;
         margin-right: 20px;
         width: 50px;
         float: right;
