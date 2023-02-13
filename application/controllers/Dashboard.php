@@ -34,5 +34,23 @@ class Dashboard extends MY_Controller {
 		} elseif ($this->data["step"] == 1 || $this->data["step"]> 2 ) {
 			redirect(BASE_URL.'/Mylsaf');
 		}
-	}              
+	}   
+	
+	function saveDataPerson(){ 
+		// $this->data['title'] =  $this->uri->segment(1);
+		// $this->data['metacontent']='London School of Accoutancy And Finance';
+		// $this->data['metadesc']='Student E_learning pages';
+		// $this->data['metaurl'] = current_url(); 
+
+		$gender_label = $this->security->xss_clean(secure_input($_POST['gender_label'])); 
+		$first_name = $this->security->xss_clean(secure_input($_POST['first_name'])); 
+		$last_name = $this->security->xss_clean(secure_input($_POST['last_name'])); 
+		$email = $this->security->xss_clean(secure_input($_POST['email'])); 
+		$edu = $this->security->xss_clean(secure_input($_POST['edu'])); 
+		$campus = $this->security->xss_clean(secure_input($_POST['campus'])); 
+
+		//save
+		$this->Model_dashboard->savePersonBrochure($gender_label,$first_name,$last_name,$email,$edu,$campus);
+		redirect(BASE_URL_BACKEND."/dashboard/brochure");
+	}   
 }

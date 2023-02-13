@@ -20,72 +20,130 @@
 <div class="clear"> </div>
 <header>
     <div class="new-header">
-        <a href="<?php echo BASE_URL;?>"><img src="<?php echo IMAGES_BASE_URL;?>/logo-master.jpg" style="width:15%;aspect-ratio:1/2;object-fit:contain;"></a>
-    </div>
-    <div class="header-left">
-        <a href="<?php echo BASE_URL;?>"><img src="<?php echo IMAGES_BASE_URL;?>/logo-master.jpg"></a>
-    </div>
-    <div class="hide-mylsaf" style="display:none;"><a href="https://lsafglobal.wiziqxt.com/" target="_blank"> 
-        <img src="<?php echo IMAGES_BASE_URL;?>//mylsaf.gif"></a> 
-    </div>
-    <div class="header-right">
-        <a href="https://lsafglobal.wiziqxt.com/" target="_blank"><img src="<?php echo IMAGES_BASE_URL;?>/mylsaf.gif"></a>
-        <!--<a href="<?php //echo BASE_URL.'/Mylsaf';?>"><img src="<?php //echo IMAGES_BASE_URL;?>/mylsaf.gif"></a>-->
-        <div class="clear"> </div>
-        <?php 
-        $pathBannerHome = PATH_ASSETS."/json/menu.json";
-        $arrBannerHome = json_decode(file_get_contents($pathBannerHome),TRUE);
-        $Menu_all = $arrBannerHome;
-            ?>
-        
-        <div id='menu'>
-            <ul>
-                <li class="home-menu"><a href='<?php echo BASE_URL;?>'></a></li>
-                <?php foreach($Menu_all as $mall){ ?>                   
-                <?php if(empty($mall['child_first'])){  ?> 
-                <li><a href='<?php echo BASE_URL.'/'.$mall['menu_url'];?>'><?php echo $mall['menu_title'];?></a></li>
-                    <?php }else
-                        {?> 
-                <li class='active'><a href='<?php echo $mall['menu_url'];?>'><?php echo $mall['menu_title'];?></a>
-                    <ul>
-                    <?php foreach ($mall['child_first'] as $cf) { ?>
-                    <?php if(empty($cf['child_second'])){ ?>                         
-
-                        <li><a href='<?php echo $cf['menu_url'];?>'><?php echo $cf['menu_title'];?></a> </li>            
-
-                        <?php } else { ?>                         
-
-                        <li><a href='<?php echo $cf['menu_url'];?>'><?php echo $cf['menu_title'];?></a>
-                            <ul>
-                                <?php foreach ($cf['child_second'] as $cs) { ?>
-                                <li><a href='<?php echo $cs['menu_url'];?>'><?php echo $cs['menu_title'];?></a></li>
-                                <?php } ?>    
-                            </ul>
-                        </li>            
-
-                        <?php } ?>
-                        <?php } ?> 
-                    </ul>
-                </li>
-                <?php } ?> 
-                <?php } ?>
-                <?php if (!$email){ ?>
-                <li class='active'><a href='<?php echo BASE_URL;?>/ApplyOnline'>Apply Online</a></li>
-                <li class='active mylsaf' style="display:none;"><a href='<?php echo BASE_URL;?>/mylsaf'>My LSAF</a></li>
-                <?php } 
-                else {?>
-                <li class='active'><a href='<?php echo BASE_URL;?>/Signin/signout'>Logout</a></li>
-                <?php  }?>
-            <li class='active'><a href='<?php echo BASE_URL;?>/blog'>Blog</a></li>
-            </ul>
+        <div class="Column">
+            <a href="<?php echo BASE_URL;?>"><img src="<?php echo IMAGES_BASE_URL;?>/logo-master.jpg" ></a> 
+        </div>
+        <div style="float:right; width:300px; " class="Column logo">
+            <a href="https://lsafglobal.wiziqxt.com/" target="_blank" style="float:left;margin-top:10px">
+                <img src="<?php echo IMAGES_BASE_URL;?>/GLP Logo.png" style="width:86px;height:86px;margin-right:10px">
+            </a>
+            <br>
+            <div class="myglobalguru">
+                <b>MyGlobalGuru</b><br>
+                <b>Join Global Profesional</b><br>
+                <b>Certification Community</b>
             </div>
         </div>
+        <div class="Column arrow" style="width:86px;margin-left:10px;">
+            <a href="https://lsafglobal.wiziqxt.com/" target="_blank" >
+                <img src="<?php echo IMAGES_BASE_URL;?>/arrow_white_right.gif" style="width:50px;height:30px;margin-bottom:30px">
+            </a>
+        </div>
+    </div>
+    <div class="clear"> </div>
+    <?php 
+    $pathBannerHome = PATH_ASSETS."/json/menu.json";
+    $arrBannerHome = json_decode(file_get_contents($pathBannerHome),TRUE);
+    $Menu_all = $arrBannerHome;
+        ?>
+    
+    <div id='menu'>
+        <ul>
+            <!-- <li class="home-menu">
+                <a href='<?php echo BASE_URL;?>'></a>
+            </li> -->
+            <?php foreach($Menu_all as $mall){ ?>                   
+            <?php if(empty($mall['child_first'])){  ?> 
+            <li>
+                <a href='<?php echo BASE_URL.'/'.$mall['menu_url'];?>'>
+                    <?php echo $mall['menu_title'];?>
+                </a>
+            </li>
+                <?php }else{?> 
+            <li class='active1'>
+                <a href='<?php echo $mall['menu_url'];?>'>
+                    <?php echo $mall['menu_title'];?>
+                </a>
+                <ul>
+                <?php foreach ($mall['child_first'] as $cf) { ?>
+                <?php if(empty($cf['child_second'])){ ?>                         
+
+                    <li><a href='<?php echo $cf['menu_url'];?>'><?php echo $cf['menu_title'];?></a> </li>            
+
+                    <?php } else { ?>                         
+
+                    <li><a href='<?php echo $cf['menu_url'];?>'><?php echo $cf['menu_title'];?></a>
+                        <ul>
+                            <?php foreach ($cf['child_second'] as $cs) { ?>
+                            <li><a href='<?php echo $cs['menu_url'];?>'><?php echo $cs['menu_title'];?></a></li>
+                            <?php } ?>    
+                        </ul>
+                    </li>            
+
+                    <?php } ?>
+                    <?php } ?> 
+                </ul>
+            </li>
+            <?php } ?> 
+            <?php } ?>
+            <?php if (!$email){ ?>
+            <li class='active'><a href='<?php echo BASE_URL;?>/ApplyOnline'>Apply Online</a></li>
+            <li class='active mylsaf' style="display:none;"><a href='<?php echo BASE_URL;?>/mylsaf'>My LSAF</a></li>
+            <?php } 
+            else {?>
+            <li class='active'><a href='<?php echo BASE_URL;?>/Signin/signout'>Logout</a></li>
+            <?php  }?>
+            <li class='active'><a href='<?php echo BASE_URL;?>/blog'>Success Story</a></li>
+        </ul>
+    </div>
 </header>
 
 
 <style>
+    @font-face {
+        font-family: sansation;
+        src: <?php echo FONT_BASE_URL;?>/Sansation_Bold.ttf";
+    }
     .new-header {
         background-color: #071F89;
-        height:6em;
+        display:inline;
+        width:100%;
+        display: table;
+        table-layout: fixed; /*Optional*/
+        border-spacing: 5px; /*Optional*/
+        height:100px
+    }
+    .Column {
+        display: table-cell;
+    }
+    .new-header a img{
+        height: 100px;
+        width:300px;
+    }
+    .myglobalguru{
+        margin-top:5px;
+        margin-left:5px;
+    }
+    .myglobalguru b{
+        font-family:"Lucida Sans", "lucida-sans";
+        font-size:"24px";
+        color:white;
+    }
+
+    @media screen and (max-width: 800px) {
+        .arrow{
+            /* background-color:#000; */
+            display:none;
+        }
+        .logo{
+            display:none;
+        }
+        .myglobalguru{
+            display:none;
+        }
+        #menu li:hover>ul{
+            left:0px;
+            top:0px;
+        }
     }
 </style>

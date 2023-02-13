@@ -5,11 +5,11 @@
       <div class="apply"><span>APPLY ONLINE</span></div>
    </a>
    <a href="<?php echo BASE_URL;?>/Location">
-      <div class="inquiry"/><span>SUBMIT INQUIRY</span></div>
+      <div class="inquiry"><span>SUBMIT INQUIRY</span></div>
    </a>
    <!-- <button id="myBtn">Open Modal</button> -->
    <a href="#" id="myBtn">
-      <div class="brochure"/><span>BROCHURE</span></div>
+      <div class="brochure"><span>BROCHURE</span></div>
    </a>
    <?php }   else {?>    
    <a href="<?php echo BASE_URL;?>/Location">
@@ -39,25 +39,25 @@
     <form class="row1" action="<?php echo site_url('controller/update_data'); ?>" method="post">
       <div class="gender-group">
         <label class="gender-label">Mr / Mrs / Ms *</label>
-        <input type="text" class="form-control" id="name" name="name" value="">
+        <input type="text" class="form-control" id="gender_label" name="gender_label" value="" required>
       </div>
       <div class="first-name-group">
         <label class="first-name-label">First Name *</label>
-        <input type="text" class="form-control" id="name" name="name" value="">
+        <input type="text" class="form-control" id="first_name" name="first_name" value="" required>
       </div>
       <div class="last-name-group">
         <label class="last-name-label">Last Name *</label>
-        <input type="text" class="form-control" id="name" name="name" value="">
+        <input type="text" class="form-control" id="last_name" name="last_name" value="" required>
       </div>
     </form>
     <form class="row2" action="<?php echo site_url('controller/update_data'); ?>" method="post">
       <div class="email-group">
         <label class="email-label">Email *</label>
-        <input type="text" class="form-control" id="name" name="name" value="">
+        <input type="text" class="form-control" id="email" name="email" value="">
       </div>
       <div class="edu-group">
         <label class="edu-label">Level of Education *</label>
-        <input type="text" class="form-control" id="dropdown" name="name" value="">
+        <input type="text" class="form-control" id="edu" name="edu" value="" required>
         <ul id="options" style="display: none;">
             <li>Option 1</li>
             <li>Option 2</li>
@@ -66,7 +66,7 @@
       </div>
       <div class="campus-group">
         <label class="campus-label">Select a SIS campus near you *</label>
-        <input type="text" class="form-control" id="dropdown" name="name" value="">
+        <input type="text" class="form-control" id="campus" name="campus" value="" required>
         <ul id="options" style="display: none;">
             <li>Option 1</li>
             <li>Option 2</li>
@@ -74,7 +74,7 @@
         </ul>
       </div>
     </form>
-    <form class="row3" action="<?php echo site_url('controller/update_data'); ?>" method="post">
+    <form class="row3" action="<?php echo BASE_URL;?>/dashboard/brochure" method="post">
         <button id="btnSubmit">Submit</button>
     </form>
   </div>

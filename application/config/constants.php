@@ -109,14 +109,15 @@ define('BASE_URL', $config['base_url']);
 
 // $config['base_url'] ="https://www.lsafglobal.com";
 $config['base_url'] ="https://www.localhost/lsaf";
-define('BASE_URL', $config['base_url']);
-// define('BASE_URL', "https://www.localhost/lsaf");
+// define('BASE_URL', $config['base_url']);
+define('BASE_URL', "https://www.localhost/lsaf");
 
 define('JS_BASE_URL', BASE_URL.'/assets/js');
 define('CSS_BASE_URL', BASE_URL.'/assets/css');
 define('SLICK_BASE_URL', BASE_URL.'/assets/slick');
 define('TOOLS_BASE_URL', BASE_URL.'/assets/tools');
 define('IMAGES_BASE_URL', BASE_URL.'/assets/images');
+define('FONT_BASE_URL', BASE_URL.'/assets/font');
 define('IMG_BASE_URL', BASE_URL.'/assets/img');
 define('CAPCTHA_BASE_URL', BASE_URL.'/assets/capctha/');
 define('PDF_BASE_URL', BASE_URL.'/assets/pdf/');
