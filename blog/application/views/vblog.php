@@ -84,13 +84,13 @@
         </section>
         <!-- end page title section -->
         <!-- start portfolio section -->
-        <section class="wow fadeIn padding-30px-top md-padding-50px-top sm-padding-30px-top">
-            <div class="container-fluid" id="filter-container">
-                <div class="row">
-                         <div class="col-12 header" id="myFilter">
+        <section class="wow fadeIn bg-light-gray padding-30px-top md-padding-50px-top sm-padding-30px-top">
+            <div class="container-fluid bg-light-gray" id="filter-container">
+                <div class="row bg-light-gray">
+                         <div class="col-12 bg-light-gray" id="myFilter">
                         <!-- start filter navigation -->
-                        <ul id="myUl" class="portfolio-filter nav nav-tabs justify-content-center border-0 portfolio-filter-tab-1 font-weight-600 alt-font text-uppercase text-center margin-80px-bottom text-small md-margin-40px-bottom sm-margin-20px-bottom">
-                          <li class="nav active"><a href="javascript:void(0);" data-filter="*" class="light-gray-text-link text-very-small">All</a></li>
+                        <ul id="myUl" class="portfolio-filter nav nav-tabs justify-content-center border-0 portfolio-filter-tab-1 font-weight-600 alt-font text-uppercase text-center margin-80px-bottom text-small md-margin-40px-bottom sm-margin-20px-bottom bg-light-gray">
+                          <li class="nav active bg-light-gray"><a href="javascript:void(0);" data-filter="*" class="light-gray-text-link text-very-small bg-light-gray">All</a></li>
                               <?php
                               if($countCategory > 0){
                               $i=0;
@@ -99,7 +99,7 @@
                                 
                               ?>  
                             
-                            <li class="nav"><a href="javascript:void(0);" data-filter=".<?= generateCategory($ls['options_title'])?>" class="light-gray-text-link text-very-small"><?= $ls['options_title'];?></a></li>
+                            <li class="nav bg-light-gray"><a href="javascript:void(0);" data-filter=".<?= generateCategory($ls['options_title'])?>" class="bg-light-gray light-gray-text-link text-very-small"><?= $ls['options_title'];?></a></li>
                             
                             <?php } } ?>
                         </ul>                                                                           
