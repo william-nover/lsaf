@@ -69,107 +69,32 @@
          <script src="<?= FRONTEND_BASE_URL; ?>/share/jssocials.js"></script>
       <?php include 'include/analytics.php';?>
    </head>
-   <body>
+   <body class="bg-light-gray">
       <?php include 'include/tagmanager.php';?>
       <!-- start header -->
       <?php include 'include/vheader.php';?>
       <!-- end header -->
-      <section class="wow fadeIn bg-light-gray padding-35px-tb page-title-small top-space" style="margin-top: 72px; visibility: visible; animation-name: fadeIn;">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-8 col-md-6 d-flex flex-column justify-content-center text-center text-md-left">
-                        <!-- start page title -->
-                       <h1 class="text-black alt-font font-weight-400 letter-spacing-minus-1 margin-10px-bottom"><?= html_entity_decode(contentValue($content, 'title'));?></h1>
-                        <!-- end page title -->
-                    </div>
-                    <div class="col-xl-4 col-md-6 alt-font breadcrumb justify-content-center justify-content-md-end text-small sm-margin-10px-top">
-                        <!-- start breadcrumb -->
-                        <span class="text-dark-gray opacity6 alt-font no-margin-bottom text-uppercase text-small">
-                         <a href="<?=BASE_URL?>/blog" title="blog" class="text-dark-gray">Blog</a>
-                         &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;by <a href="<?=BASE_URL?>"  title="lsafglobal" class="text-dark-gray">lsafglobal</a>
-                         &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                         <a href="#" title="<?= html_entity_decode(contentValue($content, 'category'));?>" class="text-dark-gray"><?= html_entity_decode(contentValue($content, 'category'));?></a>
-                         &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <?= date_convert(contentValue($content, 'publish_date'));?>
-                     </span>
-                        <!-- end breadcrumb -->
-                    </div>
-                </div>
-            </div>
-        </section>
       
-      <section class="wow fadeIn">
+      <section class="wow fadeIn bg-light-gray">
          <div class="container">
             <div class="row">
-               <main class="col-12 col-lg-9 right-sidebar md-margin-60px-bottom sm-margin-40px-bottom md-padding-15px-lr">
-                  <img src="<?= html_entity_decode(contentValue($content, 'images'));?>" alt="<?= html_entity_decode(contentValue($content, 'title'));?>" class="width-100" data-no-retina="">       
-                  <hr>
-                  <?= html_entity_decode(contentValue($content, 'desc'));?> 
+               <main class="port-row col-12 col-lg-9 right-sidebar md-margin-60px-bottom sm-margin-40px-bottom md-padding-15px-lr">
+                  <img src="<?= html_entity_decode(contentValue($content, 'images'));?>" alt="<?= html_entity_decode(contentValue($content, 'title'));?>" class="blog-img-circle col-5" data-no-retina="">       
+                  <br>
+                  <div class="portfolio-hover-content position-relative port-desc-margin">
+                     <div  title="<?= html_entity_decode(contentValue($content, 'title'));?>">
+                        <span class="text-uppercase"><?=html_entity_decode(contentValue($content, 'category'))?></span> 
+                        <span class="line-height-normal font-weight-600 text-small alt-font margin-5px-bottom text-extra-dark-gray text-uppercase d-block">
+                        <?=html_entity_decode(contentValue($content, 'title'));?></span>
+                     </div>
+                     <p class="text-medium-gray text-medium"><?=html_entity_decode(contentValue($content, 'desc'));?>...</p>
+                  </div>
                  <!-- 
                   <span class="d-block text-medium-gray text-small" ><i class="fas fa-eye"><?=$content['views']?></i></span>
                  --> 
                  <br/>
-                 
-                  <strong>Share</strong>
-                  <div id="sharePopup"></div>
-                  <script>
-                            $(function() {
-
-                                //url = get url page to share 
-                                //text= title share
-                                 var url = window.location.href;
-                                 var text ='<?= html_entity_decode(contentValue($content, 'title'));?>';
-                                   
-                                 $("#sharePopup").jsSocials({
-                                     url: url,
-                                     text: text,
-                                     showLabel: false,
-                                     showCount: false,
-                                     shares: ["facebook","whatsapp", "twitter", "email", "line", "telegram", "messenger"]
-                                 });
-
-                             });
-                         </script>
-                    <hr>
-                    
-                    <script src="https://www.powr.io/powr.js?platform=html"></script><div class="powr-comments" id="831b07c2_1571127538"></div>
                
                </main>
-               
-                <aside class="col-12 col-lg-3">
-                    <div class="margin-45px-bottom sm-margin-25px-bottom">
-                            <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Popular Blog</span></div>
-                            <ul class="latest-post position-relative">
-                                 <?php
-                                if($countLatestBlog > 0){
-                                $i=0;
-                                foreach($LatestBlog as $lb){
-                                $i++;
-                                if ($lb['row_alias'] !=''){                          
-                                    $ref1 =BASE_URL.'/'.$lb['row_alias'];
-                                    }                       
-                                    else {                          
-                                 $ref1 = BASE_URL.'/'.$controller.'/detail/'.$lb['row_id'];           
-                                 }  
-                                ?> 
-                                <li class="media">
-                                    <figure>
-                                        <a href="<?=$ref1;?>" title="<?= html_entity_decode(contentValue($lb, 'title'));?>">
-                                         <img src="<?=str_replace('/admin/','/admin/.thumbs/',contentValue($lb, 'images'));?>" alt="<?= html_entity_decode(contentValue($lb, 'title'));?>">
-                                        </a>
-                                    </figure>
-                                    <div class="media-body text-small">
-                                        <a href="<?=$ref1;?>" title="<?= html_entity_decode(contentValue($lb, 'title'));?>" class="text-extra-dark-gray">
-                                            <span class="d-block margin-5px-bottom"><?= html_entity_decode(contentValue($lb, 'title'));?></span>
-                                        </a> 
-                                        <span class="d-block text-medium-gray text-small"><?= date_convert(contentValue($lb, 'publish_date'));?></span>
-                                    </div>
-                                </li>
-                          <?php } } ?>        
-                            </ul>
-                        </div>
-                </aside>
-                
-                
                 
             </div>
          </div>
@@ -286,3 +211,14 @@
    </body>
    <?php  } } ?>
 </html>
+<style>
+.blog-img-circle{
+   border-radius: 50%;
+   width: 230px;
+   height: 230px;
+}
+.port-row{
+   display: inline;
+   float: left;
+}
+</style>

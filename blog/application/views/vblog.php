@@ -85,33 +85,11 @@
         <!-- end page title section -->
         <!-- start portfolio section -->
         <section class="wow fadeIn bg-light-gray padding-30px-top md-padding-50px-top sm-padding-30px-top">
-            <div class="container-fluid bg-light-gray" id="filter-container">
-                <div class="row bg-light-gray">
-                         <div class="col-12 bg-light-gray" id="myFilter">
-                        <!-- start filter navigation -->
-                        <ul id="myUl" class="portfolio-filter nav nav-tabs justify-content-center border-0 portfolio-filter-tab-1 font-weight-600 alt-font text-uppercase text-center margin-80px-bottom text-small md-margin-40px-bottom sm-margin-20px-bottom bg-light-gray">
-                          <li class="nav active bg-light-gray"><a href="javascript:void(0);" data-filter="*" class="light-gray-text-link text-very-small bg-light-gray">All</a></li>
-                              <?php
-                              if($countCategory > 0){
-                              $i=0;
-                              foreach($ListCategory as $ls){
-                              $i++;
-                                
-                              ?>  
-                            
-                            <li class="nav bg-light-gray"><a href="javascript:void(0);" data-filter=".<?= generateCategory($ls['options_title'])?>" class="bg-light-gray light-gray-text-link text-very-small"><?= $ls['options_title'];?></a></li>
-                            
-                            <?php } } ?>
-                        </ul>                                                                           
-                        <!-- end filter navigation -->
-                    </div>
-                </div>
-            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-12 px-3 p-md-0">
                         <div class="filter-content overflow-hidden">
-                            <ul class="portfolio-grid work-3col gutter-medium hover-option6 lightbox-portfolio">
+                            <ul class="portfolio-grid work-2col gutter-medium hover-option6 lightbox-portfolio">
                                 <li class="grid-sizer"></li>
                                 <!-- start portfolio-item item -->
                                 <?php
@@ -126,19 +104,18 @@
                                $ref = BASE_URL.'/'.$controller.'/detail/'.$ls['row_id'];           
                                }  
                               ?>  
-                                <li class="<?= generateCategory(html_entity_decode(contentValue($ls, 'category')));?> grid-item wow fadeInUp last-paragraph-no-margin" data-wow-delay="0.<?=$i;?>s">
+                                <li class="<?= generateCategory(html_entity_decode(contentValue($ls, 'category')));?> grid-item wow fadeInUp last-paragraph-no-margin port-sizing li-margin" data-wow-delay="0.<?=$i;?>s">
                                     <figure>
-                                        <div class="portfolio-img bg-light-gray position-relative text-center overflow-hidden">
+                                        <div class="portfolio-img bg-light-gray position-relative text-center overflow-hidden port-img-sizing">
                                             <img src="<?= html_entity_decode(contentValue($ls, 'images'));?>" alt="<?= html_entity_decode(contentValue($ls, 'title'));?>">
                                             <div class="portfolio-icon">
                                                 <a href="<?=$ref;?>" title="<?= html_entity_decode(contentValue($ls, 'title'));?>"><i class="fas fa-link text-extra-dark-gray" aria-hidden="true"></i></a>
                                                 <a class="gallery-link" title="<?= html_entity_decode(contentValue($ls, 'title'));?>" href="<?= html_entity_decode(contentValue($ls, 'images'));?>"><i class="fas fa-search text-extra-dark-gray" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
-                                        <figcaption class="bg-white">
-                                            <div class="portfolio-hover-main text-left">
+                                            <div class="text-left port-desc-sizing">
                                                 <div class="portfolio-hover-box align-middle">
-                                                    <div class="portfolio-hover-content position-relative">
+                                                    <div class="portfolio-hover-content position-relative port-desc-margin">
                                                         <a href="<?=$ref;?>" title="<?= html_entity_decode(contentValue($ls, 'title'));?>">
                                                             <span class="text-uppercase"><?=html_entity_decode(contentValue($ls, 'category'))?></span> 
                                                             <span class="line-height-normal font-weight-600 text-small alt-font margin-5px-bottom text-extra-dark-gray text-uppercase d-block">
@@ -147,13 +124,11 @@
                                                         <p class="text-medium-gray text-medium"><?= character_limiter(html_entity_decode(contentValue($ls, 'desc')),200);?>...</p>
                                                         <div class="separator-line-horrizontal-full bg-medium-gray margin-20px-tb"></div>
                                                         <div class="author">
-                                                            <span class="text-medium-gray text-uppercase text-extra-small d-inline-block">by <a href="https://lsafglobal.com" title="home" class="text-medium-gray">Lsafglobal</a>&nbsp;&nbsp;|&nbsp;&nbsp;<?= date_convert(contentValue($ls, 'publish_date'));?></span>
-                                                        </div>
+                                                            <span class="text-medium-gray text-uppercase text-extra-small d-inline-block"><?= date_convert(contentValue($ls, 'publish_date'));?></span>
                                                     </div>
-                                                    
                                                 </div>
                                             </div>
-                                        </figcaption>
+                                        </div>
                                     </figure>
                                 </li>
                                 <!-- end portfolio item -->
@@ -250,6 +225,22 @@ top: 0;
 }
 .filter-container {
  margin-top: 80px;
+}
+.port-img-sizing{
+    width: 460px;
+    height: 272px;
+}
+.port-desc-sizing{
+    width: 460px;
+    height: 272px;
+    background-color: #ffffff;
+}
+.port-desc-margin{
+    margin: 20px;
+}
+.ul-gap{
+    display: flex;
+    gap: 2px;
 }
 </style>
     </body>
