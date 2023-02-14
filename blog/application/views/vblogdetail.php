@@ -76,30 +76,23 @@
       <!-- end header -->
       
       <section class="wow fadeIn bg-light-gray">
-         <div class="container">
+         <div class="container card">
             <div class="row">
-               <main class="port-row col-12 col-lg-9 right-sidebar md-margin-60px-bottom sm-margin-40px-bottom md-padding-15px-lr">
-                  <img src="<?= html_entity_decode(contentValue($content, 'images'));?>" alt="<?= html_entity_decode(contentValue($content, 'title'));?>" class="blog-img-circle col-5" data-no-retina="">       
+               <div class="col-md-auto">
+                  <img src="<?= html_entity_decode(contentValue($content, 'images'));?>" alt="<?= html_entity_decode(contentValue($content, 'title'));?>" class="blog-img-circle" data-no-retina=""> 
+               </div>
+               <div class="col description">
+                  <span class="text-uppercase"><?=html_entity_decode(contentValue($content, 'category'))?></span> 
+                  <span class="line-height-normal font-weight-600 text-small alt-font margin-5px-bottom text-extra-dark-gray text-uppercase d-block">
+                        <?=html_entity_decode(contentValue($content, 'title'));?>
+                  </span>
                   <br>
-                  <div class="portfolio-hover-content position-relative port-desc-margin">
-                     <div  title="<?= html_entity_decode(contentValue($content, 'title'));?>">
-                        <span class="text-uppercase"><?=html_entity_decode(contentValue($content, 'category'))?></span> 
-                        <span class="line-height-normal font-weight-600 text-small alt-font margin-5px-bottom text-extra-dark-gray text-uppercase d-block">
-                        <?=html_entity_decode(contentValue($content, 'title'));?></span>
-                     </div>
-                     <p class="text-medium-gray text-medium"><?=html_entity_decode(contentValue($content, 'desc'));?>...</p>
-                  </div>
-                 <!-- 
-                  <span class="d-block text-medium-gray text-small" ><i class="fas fa-eye"><?=$content['views']?></i></span>
-                 --> 
-                 <br/>
-               
-               </main>
-                
+                  <p class="text-medium-gray text-medium"><?=html_entity_decode(contentValue($content, 'desc'));?>...</p>
+               </div>
             </div>
          </div>
       </section>
-      <section class="wow fadeIn bg-light-gray">
+      <section class="wow fadeIn bg-light-gray related-post">
          <div class="container">
             <div class="row">
                <div class="col-md-12 col-sm-12 col-xs-12 center-col text-center margin-80px-bottom xs-margin-40px-bottom">
@@ -212,13 +205,26 @@
    <?php  } } ?>
 </html>
 <style>
-.blog-img-circle{
-   border-radius: 50%;
-   width: 230px;
-   height: 230px;
-}
-.port-row{
-   display: inline;
-   float: left;
-}
+   .blog-img-circle{
+      border-radius: 50%;
+      width: 320px;
+      height: 310px;
+      margin:50px;
+   }
+   .port-row{
+      display: inline;
+      float: left;
+   }
+   .new-row{
+      margin-left: auto;
+      margin-right: auto;
+   }
+   .description{
+      margin-top:50px;
+      margin-bottom:50px;
+      margin-right:50px;
+   }
+   .related-post{
+      padding:20px 0;
+   }
 </style>
