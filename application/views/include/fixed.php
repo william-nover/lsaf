@@ -36,46 +36,48 @@
 <!-- Modal HTML -->
 <div id="myModal" class="modal">
   <div class="modal-content">
-    <form class="row1" action="<?php echo site_url('controller/update_data'); ?>" method="post">
-      <div class="gender-group">
-        <label class="gender-label">Mr / Mrs / Ms *</label>
-        <input type="text" class="form-control" id="gender_label" name="gender_label" value="" required>
+    <form id="brochureInputForm" action="<?php echo BASE_URL;?>/Dashboard/saveDataPerson" method="post">
+      <div class="row1">
+        <div class="gender-group">
+          <label class="gender-label">Mr / Mrs / Ms *</label>
+          <input type="text" class="form-control" id="gender_label" name="gender_label" value="" required>
+        </div>
+        <div class="first-name-group">
+          <label class="first-name-label">First Name *</label>
+          <input type="text" class="form-control" id="first_name" name="first_name" value="" required>
+        </div>
+        <div class="last-name-group">
+          <label class="last-name-label">Last Name *</label>
+          <input type="text" class="form-control" id="last_name" name="last_name" value="" required>
+        </div>
+     </div>
+      <div class="row2">
+        <div class="email-group">
+          <label class="email-label">Email *</label>
+          <input type="text" class="form-control" id="email" name="email" value="">
+        </div>
+        <div class="edu-group">
+          <label class="edu-label">Level of Education *</label>
+          <input type="text" class="form-control" id="edu" name="edu" value="" required>
+          <ul id="options" style="display: none;">
+              <li>Option 1</li>
+              <li>Option 2</li>
+              <li>Option 3</li>
+          </ul>
+        </div>
+        <div class="campus-group">
+          <label class="campus-label">Select a SIS campus near you *</label>
+          <input type="text" class="form-control" id="campus" name="campus" value="" required>
+          <ul id="options" style="display: none;">
+              <li>Option 1</li>
+              <li>Option 2</li>
+              <li>Option 3</li>
+          </ul>
+        </div>
+    </div>
+        <div class="row3">
+            <button id="btnSubmit" onclick="submitForm()">Submit</button>
       </div>
-      <div class="first-name-group">
-        <label class="first-name-label">First Name *</label>
-        <input type="text" class="form-control" id="first_name" name="first_name" value="" required>
-      </div>
-      <div class="last-name-group">
-        <label class="last-name-label">Last Name *</label>
-        <input type="text" class="form-control" id="last_name" name="last_name" value="" required>
-      </div>
-    </form>
-    <form class="row2" action="<?php echo site_url('controller/update_data'); ?>" method="post">
-      <div class="email-group">
-        <label class="email-label">Email *</label>
-        <input type="text" class="form-control" id="email" name="email" value="">
-      </div>
-      <div class="edu-group">
-        <label class="edu-label">Level of Education *</label>
-        <input type="text" class="form-control" id="edu" name="edu" value="" required>
-        <ul id="options" style="display: none;">
-            <li>Option 1</li>
-            <li>Option 2</li>
-            <li>Option 3</li>
-        </ul>
-      </div>
-      <div class="campus-group">
-        <label class="campus-label">Select a SIS campus near you *</label>
-        <input type="text" class="form-control" id="campus" name="campus" value="" required>
-        <ul id="options" style="display: none;">
-            <li>Option 1</li>
-            <li>Option 2</li>
-            <li>Option 3</li>
-        </ul>
-      </div>
-    </form>
-    <form class="row3" action="<?php echo BASE_URL;?>/dashboard/brochure" method="post">
-        <button id="btnSubmit">Submit</button>
     </form>
   </div>
 </div>
@@ -117,6 +119,17 @@ $("#options li").click(function() {
   // Submit the form or perform any other action you need here
 });
 });
+      function submitForm() {
+                $.ajax({
+                    url: '<?php echo BASE_URL;?>/Dashboard/saveDataPerson',
+                    type: 'post',
+                    data: $('#brochureInputForm').serialize(),
+                    success: function() {
+                        alert('Data added successfully!');
+                        location.reload();
+                    }
+                });
+            }
 </script>
 
 

@@ -40,16 +40,7 @@ class Model_dashboard extends CI_Model {
 		return $query;
 	}
 
-	function savePersonBrochure($gender_label, $first_name, $last_name, $email, $edu, $campus){
-		$sql	= "INSERT INTO tbl_downloaded_brochure SET 
-                            gender_label= '".$gender_label."', 
-                            first_name='".$first_name."', 
-                            last_name='".$last_name."', 
-                            email='".$email."', 
-                            edu='".$edu."', 
-                            campus='".$campus."',";		
-		
-		$query  = $this->db->query($sql);
-		return;
+	function savePersonBrochure($data){
+        $this->db->insert('tbl_downloaded_brochure', $data);
 	}
 }

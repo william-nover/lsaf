@@ -60,9 +60,6 @@ $route['backend/signout'] = "backend/signin/signout";
 $route['backend/changePassword'] = "backend/home/changePassword";
 $route['backend/doChangePassword'] = "backend/home/doChangePassword";
 
-// new 
-$route['/dashboard/brochure'] = "/dashboard/saveDataPerson";
-
 
 $pathPageAlias = PATH_ASSETS."/json/pages.json";
 $arr_page_alias = json_decode(file_get_contents($pathPageAlias),TRUE);
