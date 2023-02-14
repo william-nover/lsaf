@@ -222,7 +222,7 @@ a.text-very-light-gray-hover:hover {color:#ededed !important;}
 /* ===================================
     Custom
 ====================================== */
-section {padding: 130px 0; overflow: hidden;}
+section {padding: 100px 0; overflow: hidden;}
 section.big-section {padding:160px 0;}
 section.extra-big-section {padding:200px 0;}
 section.half-section {padding:80px 0;}
