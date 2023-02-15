@@ -51,7 +51,7 @@
 <!-- Modal HTML -->
 <div id="myModal" class="modal">
   <div class="modal-content">
-    <form id="brochureInputForm" action="LSAF_BOOKLET.pdf">
+    <form id="brochureInputForm">
       <div class="row1">
         <div class="gender-group">
           <label class="gender-label">Mr / Mrs / Ms *</label>
@@ -133,16 +133,17 @@ $("#options li").click(function() {
 });
 });
       function submitForm() {
-                $.ajax({
-                    url: '<?php echo BASE_URL;?>/action-brochure',
-                    type: 'post',
-                    data: $('#brochureInputForm').serialize(),
-                    success: function() {
-                        alert('Data added successfully!');
-                        location.reload();
-                    }
-                });
-            }
+        
+            $.ajax({
+                url: '<?php echo BASE_URL;?>/Fixed/saveDataPerson',
+                type: 'post',
+                data: $('#brochureInputForm').serialize(),
+                success: function() {
+                    alert('Data added successfully!');
+                    location.reload();
+                }
+            });
+        }
 </script>
 
 

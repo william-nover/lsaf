@@ -39,8 +39,4 @@ class Model_dashboard extends CI_Model {
 		
 		return $query;
 	}
-
-	function savePersonBrochure($data){
-        $this->db->insert('tbl_downloaded_brochure', $data);
-	}
 }
