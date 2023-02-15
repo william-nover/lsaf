@@ -64,37 +64,37 @@
         "banner_create_date":"13-11-2015 07:48:57",
         "banner_create_by":"1"
     },
-        {
-            "banner_id":"7",
-            "banner_name":"Irhoan Tanudiredja",
-            "banner_active_status":"1",
-            "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/banner\/Irhoan Tanudiredja.jpg",
-            "banner_type":"2",
-            "banner_url":"",
-            "banner_desc":"",
-            "banner_create_date":"12-11-2015 02:06:34",
-            "banner_create_by":"1"
-        },
-        {
-            "banner_id":"5",
-            "banner_name":"Ali Tahsen",
-            "banner_active_status":"1",
-            "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/product\/acca-member-01.jpg",
-            "banner_type":"2",
-            "banner_url":"",
-            "banner_desc":"",
-            "banner_create_date":"12-11-2015 02:04:56",
-            "banner_create_by":"1"
-        },
-        {
-            "banner_id":"3",
-            "banner_name":"Franky Jamin",
-            "banner_active_status":"1",
-            "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/banner\/acca-member-03.jpg",
-            "banner_type":"2",
-            "banner_url":"",
-            "banner_desc":"",
-            "banner_create_date":"03-11-2015 15:46:36",
-            "banner_create_by":"1"
-        }
+    {
+        "banner_id":"7",
+        "banner_name":"Irhoan Tanudiredja",
+        "banner_active_status":"1",
+        "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/banner\/Irhoan Tanudiredja.jpg",
+        "banner_type":"2",
+        "banner_url":"",
+        "banner_desc":"",
+        "banner_create_date":"12-11-2015 02:06:34",
+        "banner_create_by":"1"
+    },
+    {
+        "banner_id":"5",
+        "banner_name":"Ali Tahsen",
+        "banner_active_status":"1",
+        "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/product\/acca-member-01.jpg",
+        "banner_type":"2",
+        "banner_url":"",
+        "banner_desc":"",
+        "banner_create_date":"12-11-2015 02:04:56",
+        "banner_create_by":"1"
+    },
+    {
+        "banner_id":"3",
+        "banner_name":"Franky Jamin",
+        "banner_active_status":"1",
+        "banner_images":"\/lsaf\/assets\/file_upload\/admin\/images\/banner\/acca-member-03.jpg",
+        "banner_type":"2",
+        "banner_url":"",
+        "banner_desc":"",
+        "banner_create_date":"03-11-2015 15:46:36",
+        "banner_create_by":"1"
+    }
 ]

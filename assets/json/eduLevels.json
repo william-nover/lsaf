@@ -1,0 +1,22 @@
+[
+    {
+        "edu_id":"1",
+        "edu_level_name": "Diploma",
+        "created_at" : "2023-2-15 05:13:00"
+    },
+    {
+        "edu_id":"2",
+        "edu_level_name": "Undergraduate education",
+        "created_at" : "2023-2-15 05:13:00"
+    },
+    {
+        "edu_id":"3",
+        "edu_level_name": "Senior High School",
+        "created_at" : "2023-2-15 05:13:00"
+    },
+    {
+        "edu_id":"4",
+        "edu_level_name": "High School",
+        "created_at" : "2023-2-15 05:13:00"
+    }
+]
