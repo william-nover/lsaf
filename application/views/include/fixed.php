@@ -120,7 +120,7 @@ $("#options li").click(function() {
 });
 });
       function submitForm() {
-        
+       window.open('<?php echo PDF_BASE_URL;?>LSAF.pdf', '_blank').focus();
             $.ajax({
                 url: '<?php echo BASE_URL;?>/Fixed/saveDataPerson',
                 type: 'post',

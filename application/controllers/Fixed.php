@@ -6,7 +6,7 @@ class Fixed extends MY_Controller {
 	public function __construct()
 	{
 		parent::__construct();   
-		$this->load->helper('download');
+		
     }
 	
 	function index(){  
@@ -23,11 +23,5 @@ class Fixed extends MY_Controller {
         $edu = $this->input->post('edu');
         $campus = $this->input->post('campus');
 		$this->Model_fixed->savePersonBrochure($gender_label, $first_name, $last_name, $email, $edu, $campus);
-        
-		
-		// $file_path = PDF_BASE_URL.'/LSAF.pdf';
-        // $file_name = PDF_BASE_URL.'/LSAF.pdf';
-        // force_download($file_name, file_get_contents($file_path));
-        // $this->Model_fixed->savePersonBrochure($data);
 	}   
 }
