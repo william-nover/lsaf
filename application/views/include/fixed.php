@@ -33,6 +33,21 @@
      
      </ul>
 </div>
+
+
+<?php 
+  // get edu Level Lists
+  $eduLevelLists = PATH_ASSETS."/json/eduLevels.json";
+  $arrEduLevel = json_decode(file_get_contents($eduLevelLists),TRUE);
+
+  // get Campus Lists
+  $campusLists = PATH_ASSETS."/json/campusLists.json";
+  $arrCampusLists = json_decode(file_get_contents($campusLists),TRUE);
+
+  $eduAll = $arrEduLevel;
+  $campusAll = $arrCampusLists;
+?>
+
 <!-- Modal HTML -->
 <div id="myModal" class="modal">
   <div class="modal-content">
@@ -40,7 +55,7 @@
       <div class="row1">
         <div class="gender-group">
           <label class="gender-label">Mr / Mrs / Ms *</label>
-          <input type="text" class="form-control" id="gender_label" name="gender_label" value="" required>
+          <input type="text" id="gender_label" name="gender_label" value="" required>
         </div>
         <div class="first-name-group">
           <label class="first-name-label">First Name *</label>
@@ -50,7 +65,8 @@
           <label class="last-name-label">Last Name *</label>
           <input type="text" class="form-control" id="last_name" name="last_name" value="" required>
         </div>
-     </div>
+     </div> 
+     <!-- ferry gendut -->
       <div class="row2">
         <div class="email-group">
           <label class="email-label">Email *</label>
@@ -58,25 +74,23 @@
         </div>
         <div class="edu-group">
           <label class="edu-label">Level of Education *</label>
-          <input type="text" class="form-control" id="edu" name="edu" value="" required>
-          <ul id="options" style="display: none;">
-              <li>Option 1</li>
-              <li>Option 2</li>
-              <li>Option 3</li>
-          </ul>
+          <select name="edu" id="edu" class="form-control" required style="width:100%">
+          <?php foreach($eduAll as $eduLevel){ ?>
+            <option value="<?php echo $eduLevel['edu_level_name'];?>"><?php echo $eduLevel['edu_level_name'];?></option>
+            <?php } ?>
+          </select>
         </div>
         <div class="campus-group">
           <label class="campus-label">Select a SIS campus near you *</label>
-          <input type="text" class="form-control" id="campus" name="campus" value="" required>
-          <ul id="options" style="display: none;">
-              <li>Option 1</li>
-              <li>Option 2</li>
-              <li>Option 3</li>
-          </ul>
+          <select name="campus" id="campus" class="form-control" required style="width:100%">
+          <?php foreach($arrCampusLists as $campusList){ ?>
+            <option value="<?php echo $campusList['campus_name'];?>"><?php echo $campusList['campus_name'];?></option>
+            <?php } ?>
+          </select>
         </div>
     </div>
-        <div class="row3">
-            <button id="btnSubmit" onclick="submitForm()">Submit</button>
+        <div class="row3" >
+        <a href="<?php echo BASE_URL;?>/assets/file_upload/admin/files/LSAF BOOKLET.pdf" download> HERE </a>
       </div>
     </form>
   </div>
@@ -235,15 +249,20 @@ input[type="text"] {
 
 .edu-group {
     text-align: center;
-    width: 24%;
-    margin-right: 3%;
+    width: 27%;
 }
+.edu-group #edu {
+    width: 100%;
+    height:45px;
+    margin-left:10px;
+}
+
 .edu-label {
   display: inline-block;
   width: 100%;
   text-align: center;
-  margin-bottom: 10px;
-  margin-left: 30px;
+  margin-bottom: 5px;
+  margin-left: 15px;
 }
 .email-group {
     text-align: center;
@@ -261,13 +280,19 @@ input[type="text"] {
     text-align: center;
     width: 33%;
 }
+.campus-group #campus {
+    width: 100%;
+    height:45px;
+    margin-left:35px;
+}
 .campus-label {
   display: inline-block;
   width: 100%;
   text-align: center;
-  margin-bottom: 10px;
-  margin-left: 20px;
+  margin-bottom: 5px;
+  margin-left: 15px;
 }
+
 .row1 {
   display: flex;
   flex-direction: row;
