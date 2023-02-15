@@ -74,7 +74,7 @@
         </div>
         <div class="edu-group">
           <label class="edu-label">Level of Education *</label>
-          <select name="edu" id="edu" class="form-control" required style="width:100%">
+          <select name="edu" id="edu" class="form-control my-select" required style="width:100%">
           <?php foreach($eduAll as $eduLevel){ ?>
             <option value="<?php echo $eduLevel['edu_level_name'];?>"><?php echo $eduLevel['edu_level_name'];?></option>
             <?php } ?>
@@ -82,15 +82,15 @@
         </div>
         <div class="campus-group">
           <label class="campus-label">Select a SIS campus near you *</label>
-          <select name="campus" id="campus" class="form-control" required style="width:100%">
+          <select name="campus" id="campus" class="form-control my-select" required style="width:100%">
           <?php foreach($arrCampusLists as $campusList){ ?>
             <option value="<?php echo $campusList['campus_name'];?>"><?php echo $campusList['campus_name'];?></option>
             <?php } ?>
           </select>
         </div>
     </div>
-        <div class="row3" >
-        <a href="<?php echo BASE_URL;?>/assets/file_upload/admin/files/LSAF BOOKLET.pdf" download> HERE </a>
+        <div class="row3">
+            <button id="btnSubmit" onclick="submitForm()">Submit</button>
       </div>
     </form>
   </div>
@@ -253,8 +253,8 @@ input[type="text"] {
 }
 .edu-group #edu {
     width: 100%;
-    height:45px;
-    margin-left:10px;
+    height: 49px;
+    margin-left: 22px;
 }
 
 .edu-label {
@@ -282,8 +282,8 @@ input[type="text"] {
 }
 .campus-group #campus {
     width: 100%;
-    height:45px;
-    margin-left:35px;
+    height: 49px;
+    margin-left: 37px;
 }
 .campus-label {
   display: inline-block;
@@ -338,5 +338,36 @@ button#btnSubmit {
   height: 45px;
   text-align: center;
   cursor: pointer;
+}
+.my-select {
+  -webkit-appearance: none; /* Remove default styling for Safari */
+  -moz-appearance: none; /* Remove default styling for Firefox */
+  appearance: none; /* Remove default styling for other browsers */
+  border: none;
+  background-color: #F0F0F0;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: inherit;
+  width: 100%;
+}
+
+.my-select:focus {
+  outline: none;
+}
+
+/* Add a border and border-radius to mimic an input element */
+.my-select {
+  border: 1px solid #dedede;
+}
+
+/* Add padding to mimic an input element */
+.my-select {
+  padding: 8px;
+}
+
+/* Add a box-shadow to mimic a focused input element */
+.my-select:focus {
+  box-shadow: 0 0 4px #4a90e2;
 }
 </style>
