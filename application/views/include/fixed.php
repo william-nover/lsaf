@@ -65,7 +65,8 @@
           <label class="last-name-label">Last Name *</label>
           <input type="text" class="form-control" id="last_name" name="last_name" value="" required>
         </div>
-     </div>
+     </div> 
+     <!-- ferry gendut -->
       <div class="row2">
         <div class="email-group">
           <label class="email-label">Email *</label>
