@@ -24,7 +24,7 @@
             <a href="<?php echo BASE_URL;?>"><img src="<?php echo IMAGES_BASE_URL;?>/logo-master.jpg" ></a> 
         </div>
         <div style="float:right; width:300px; " class="Column logo">
-            <a href="https://lsafglobal.wiziqxt.com/" target="_blank" style="float:left;margin-top:10px">
+            <a href="https://myglobalguru.com/" target="_blank" style="float:left;margin-top:10px">
                 <img src="<?php echo IMAGES_BASE_URL;?>/GLP Logo.png" style="width:86px;height:86px;margin-right:10px">
             </a>
             <br>
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="Column arrow" style="width:86px;margin-left:10px;">
-            <a href="https://lsafglobal.wiziqxt.com/" target="_blank" >
+            <a href="https://myglobalguru.com/" target="_blank" >
                 <img src="<?php echo IMAGES_BASE_URL;?>/arrow_white_right.gif" style="width:50px;height:30px;margin-bottom:30px">
             </a>
         </div>

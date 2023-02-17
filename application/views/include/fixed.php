@@ -74,7 +74,7 @@
         </div>
         <div class="edu-group">
           <label class="edu-label">Level of Education *</label>
-          <select name="edu" id="edu" class="form-control my-select" required style="width:100%">
+          <select name="edu" id="edu" class="form-control my-select" required style="width:100%" required>
           <?php foreach($eduAll as $eduLevel){ ?>
             <option value="<?php echo $eduLevel['edu_level_name'];?>"><?php echo $eduLevel['edu_level_name'];?></option>
             <?php } ?>
@@ -82,7 +82,7 @@
         </div>
         <div class="campus-group">
           <label class="campus-label">Select a SIS campus near you *</label>
-          <select name="campus" id="campus" class="form-control my-select" required style="width:100%">
+          <select name="campus" id="campus" class="form-control my-select" required style="width:100%" required>
           <?php foreach($arrCampusLists as $campusList){ ?>
             <option value="<?php echo $campusList['campus_name'];?>"><?php echo $campusList['campus_name'];?></option>
             <?php } ?>
@@ -90,7 +90,7 @@
         </div>
     </div>
         <div class="row3">
-            <button id="btnSubmit" onclick="submitForm()">Submit</button>
+            <button id="btnSubmit" onclick="submitForm()">DOWNLOAD</button>
       </div>
     </form>
   </div>

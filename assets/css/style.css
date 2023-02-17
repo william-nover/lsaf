@@ -912,7 +912,8 @@ body {
 
 .apply {
     bottom: 48%;
-    background: url(../../assets/images/bg-a.jpg) repeat-y
+    background-color: #C6030c;
+    /* background: url(../../assets/images/bg-a.jpg) repeat-y */
 }
 
 .apply:hover {
@@ -930,7 +931,8 @@ body {
 
 .brochure {
     bottom: 42%;
-    background: url(../../assets/images/bg-b.jpg) repeat-y
+    background-color: #0F1B51;
+    /* background: url(../../assets/images/bg-b.jpg) repeat-y */
 }
 
 .brochure:hover {
@@ -1924,12 +1926,14 @@ header {
 .footer-link-2,
 .footer-link-3 {
     height: 300px;
-    float: left
+    float: left;
 }
 
 .footer-link-1 {
     width: 230px;
-    margin: 20px 0 0 25px
+    margin: 20px 0 0 25px;
+    /* padding-top:10px;
+    padding-bottom:10px */
 }
 
 .footer-link-1a h1 {
@@ -3271,14 +3275,14 @@ table.gridtable td {
     clear: both
 }
 
-@media only screen and (max-width:1300px) {
+/* @media only screen and (max-width:1300px) { */
 
-    .acca-logo,
+    /* .acca-logo,
     .apply,
     .inquiry {
         display: none
-    }
-}
+    } */
+/* } */
 
 @media only screen and (max-width:1150px) {
     .sign-up-left h1 {
@@ -3517,11 +3521,11 @@ table.gridtable td {
         display: none !important
     }
 
-    .apply,
+    /* .apply,
     .header-right img,
     .inquiry {
         display: none
-    }
+    } */
 
     .container {
         box-shadow: none
@@ -3676,7 +3680,8 @@ table.gridtable td {
 
     .footer-link-3 {
         height: auto;
-        width: 95%
+        width: 95%;
+        margin-top:-200px;
     }
 
     .footer-link-3a {
@@ -4010,7 +4015,7 @@ only screen and (min-resolution:2dppx) and (max-width:1024px) {
         display: block;
         width: 100%;
         border-bottom: 0;
-        background: #202024
+        background: #071F89
     }
 
     #menu>ul>li {
@@ -4262,7 +4267,7 @@ only screen and (min-resolution:2dppx) and (max-width:1024px) {
     .footer-link-2a,
     .footer-link-2b,
     .footer-link-3a {
-        padding-bottom: 0;
+        /* padding-bottom: 0; */
         width: 95%
     }
 
@@ -4379,7 +4384,8 @@ only screen and (min-resolution:2dppx) and (max-width:1024px) {
     }
 
     .footer-link {
-        height: 960px
+        height: 960px;
+        padding-top:10px;
     }
 
     .content h1,

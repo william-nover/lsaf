@@ -93,7 +93,7 @@
                <div class="footer-link-3b">
                 <?php if (!$email){ ?>
                     <a href='<?php echo BASE_URL;?>/ApplyOnline'><p> Apply Online</p> </a>
-                    <a href='<?php echo BASE_URL;?>/Mylsaf'><p> Mylsaf</p> </a>
+                    <a href="https://myglobalguru.com"><p> MyGlobalGuru</p> </a>
                     <?php } 
                     else {?>
                     <a href='<?php echo BASE_URL;?>/Signin/signout'><p>logout</p> </a>

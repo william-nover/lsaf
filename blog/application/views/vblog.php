@@ -75,7 +75,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-8 col-md-6 d-flex flex-column justify-content-center text-center text-md-left">
                         <!-- start page title -->
-                        <h1 class="alt-font text-extra-dark-gray font-weight-600 mb-0 text-uppercase">Blog</h1>
+                        <h1 class="alt-font text-extra-dark-gray font-weight-600 mb-0 text-uppercase">Success Story</h1>
                         <!-- end page title -->
                     </div>
                     
