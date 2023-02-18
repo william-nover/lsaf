@@ -98,6 +98,13 @@
       </section>
       <section class="wow fadeIn bg-light-gray related-post">
          <div class="container">
+            <div class="row">
+               <div class="col-md-12 col-sm-12 col-xs-12 center-col text-left margin-10px-bottom xs-margin-40px-bottom">
+                  <div class="position-relative overflow-hidden width-100">
+                     <span class="blog-fonsi text-medium text-outside-line-full alt-font font-weight-500 text-medium-gray">Blog</span>
+                  </div>
+               </div>
+            </div>
     <div class="row">
         <div class="col-12 px-3 p-md-0">
             <div class="filter-content overflow-hidden">
@@ -300,5 +307,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+   }
+   .blog-fonsi{
+      font-size: 20px;
    }
 </style>
