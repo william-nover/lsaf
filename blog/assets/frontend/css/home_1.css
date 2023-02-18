@@ -1539,6 +1539,11 @@ section.half-section {
     height: 1px
 }
 
+.separator-line-horrizontal-72 {
+    width: 72%;
+    height: 1px
+}
+
 .opacity-very-light {
     position: absolute;
     height: 100%;

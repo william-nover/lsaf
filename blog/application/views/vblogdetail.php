@@ -78,8 +78,12 @@
       <section class="wow fadeIn bg-light-gray">
          <div class="container card">
             <div class="row">
-               <div class="col-md-auto">
+               <div class="col-md-auto vert-container">
                   <img src="<?= html_entity_decode(contentValue($content, 'images'));?>" alt="<?= html_entity_decode(contentValue($content, 'title'));?>" class="blog-img-circle" data-no-retina=""> 
+                  <!-- <a href="<?=$ref;?>"> -->
+                  <a href="https://www.linkedin.com/in/lsafjkt/?originalSubdomain=id">
+                     <label class="linkedin-label">in</label>
+                  </a>
                </div>
                <div class="col description">
                   <span class="text-uppercase"><?=html_entity_decode(contentValue($content, 'category'))?></span> 
@@ -94,44 +98,64 @@
       </section>
       <section class="wow fadeIn bg-light-gray related-post">
          <div class="container">
-            <div class="row">
-               <div class="col-md-12 col-sm-12 col-xs-12 center-col text-center margin-80px-bottom xs-margin-40px-bottom">
-                  <div class="position-relative overflow-hidden width-100">
-                     <span class="text-small text-outside-line-full alt-font font-weight-600 text-uppercase text-extra-dark-gray">Related Posts</span>
+    <div class="row">
+        <div class="col-12 px-3 p-md-0">
+            <div class="filter-content overflow-hidden">
+                <ul class="portfolio-grid work-3col gutter-medium hover-option6 lightbox-portfolio">
+                    <li class="grid-sizer"></li>
+                    <!-- start portfolio-item item -->
+                    <?php
+                    if($countPr > 0){
+                        $i=0;
+                        foreach($ListPr as $ls){
+                        $i++;
+                        if ($ls['row_alias'] !=''){                          
+                            $ref =BASE_URL.'/'.$ls['row_alias'];
+                            }                       
+                            else {                          
+                        $ref = BASE_URL.'/'.$controller.'/detail/'.$ls['row_id'];           
+                        }  
+                    ?>  
+                    <li class="<?= generateCategory(html_entity_decode(contentValue($ls, 'category')));?> grid-item wow fadeInUp last-paragraph-no-margin port-sizing li-margin" data-wow-delay="0.<?=$i;?>s">
+                        <figure>
+                            <div class="portfolio-img bg-light-gray position-relative text-center overflow-hidden port-img-sizing">
+                                <img src="<?= html_entity_decode(contentValue($ls, 'images'));?>" alt="<?= html_entity_decode(contentValue($ls, 'title'));?>">
+                                <div class="portfolio-icon">
+                                    <a href="<?=$ref;?>" title="<?= html_entity_decode(contentValue($ls, 'title'));?>"><i class="fas fa-link text-extra-dark-gray" aria-hidden="true"></i></a>
+                                    <a class="gallery-link" title="<?= html_entity_decode(contentValue($ls, 'title'));?>" href="<?= html_entity_decode(contentValue($ls, 'images'));?>"><i class="fas fa-search text-extra-dark-gray" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                                <div class="text-left port-desc-sizing">
+                                    <div class="portfolio-hover-box align-middle">
+                                        <div class="portfolio-hover-content position-relative port-desc-margin">
+                                          <div class="portfolio-hover-content position-relative port-desc-in-sizing">
+                                             <a href="<?=$ref;?>" title="<?= html_entity_decode(contentValue($ls, 'title'));?>">
+                                                   <span class="text-uppercase"><?=html_entity_decode(contentValue($ls, 'category'))?></span> 
+                                                   <span class="post-title font-weight-600 text-small alt-font text-extra-dark-gray width-90 display-block sm-width-100">
+                                                   <?=html_entity_decode(contentValue($ls, 'title'));?></span>
+                                             </a>
+                                             <p class="post-title font-weight-600 text-small text-medium-gray width-75 display-block sm-width-100"><?= character_limiter(html_entity_decode(contentValue($ls, 'desc')),200);?>...</p>
+                                          </div>
+                                            <div class="separator-line-horrizontal-72 bg-medium-gray margin-20px-tb"></div>
+                                            <div class="author">
+                                                <span class="text-medium-gray text-uppercase text-extra-small d-inline-block"><?= date_convert(contentValue($ls, 'publish_date'));?></span>
+                                                   </div>
+                                                </div>
+                                          </div>
+                                       </div>
+                                    </figure>
+                              </li>
+                              <!-- end portfolio item -->
+                                    <?php } } ?>
+                           </ul>
+                        </div>
                   </div>
                </div>
             </div>
-            <div class="row col-4-nth sm-col-2-nth">
-               <?php
-                  if($countPr > 0){
-                  $i=0;
-                  foreach($ListPr as $ls){
-                  $i++;
-                  if ($ls['row_alias'] !=''){                          
-                      $ref =BASE_URL.'/'.$ls['row_alias'];
-                      }                       
-                      else {                          
-                   $ref = BASE_URL.'/'.$controller.'/detail/'.$ls['row_id'];           
-                   }  
-                  ?>  
-               <!-- start post item -->
-               <div class="col-md-3 col-sm-6 col-xs-12 last-paragraph-no-margin sm-margin-50px-bottom xs-margin-30px-bottom wow fadeInUp">
-                  <div class="blog-post blog-post-style1 xs-text-center">
-                     <div class="blog-post-images overflow-hidden margin-25px-bottom sm-margin-20px-bottom">
-                        <a href="<?=$ref;?>">
-                            <img width="150" height="150" src="<?= html_entity_decode(contentValue($ls, 'images'));?>" alt="<?= html_entity_decode(contentValue($ls, 'title'));?>">
-                        </a>
-                     </div>
-                     <div class="post-details">
-                        <span class="post-author text-extra-small text-medium-gray text-uppercase display-block margin-10px-bottom xs-margin-5px-bottom"><?= date_convert(contentValue($ls, 'date'));?> | <?= contentValue($ls, 'category');?></span>
-                        <a href="<?=$ref;?>" class="post-title text-medium text-extra-dark-gray width-90 display-block sm-width-100" title="<?= html_entity_decode(contentValue($ls, 'title'));?>"><h2 class="text-medium"><?= html_entity_decode(contentValue($ls, 'title'));?></h2></a>
-                        <div class="separator-line-horrizontal-full bg-medium-light-gray margin-20px-tb sm-margin-15px-tb"></div>
-                   
-                     </div>
-                  </div>
-               </div>
-               <!-- end post item -->
-               <?php } } ?>
+            <div class="centered">
+               <a href="<?php echo BASE_URL;?>">
+                  <button id="btnViewAll">VIEW ALL</button>
+               </a>
             </div>
          </div>
       </section>
@@ -209,7 +233,13 @@
       border-radius: 50%;
       width: 320px;
       height: 310px;
-      margin:50px;
+      margin-left: 50px;
+      margin-right: 50px;
+      margin-top: 50px;
+      margin-bottom: 30px;
+   }
+   .linkedin-label{
+      font-size: 18px;
    }
    .port-row{
       display: inline;
@@ -226,5 +256,49 @@
    }
    .related-post{
       padding:20px 0;
+   }
+   .vert-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   .filter-container {
+      margin-top: 80px;
+   }
+   .port-img-sizing{
+      width: 460px;
+      height: 272px;
+   }
+   .port-desc-sizing{
+      width: 460px;
+      height: 272px;
+      background-color: #ffffff;
+   }
+   .port-desc-in-sizing{
+      width: 460px;
+      height: 172px;
+   }
+   .port-desc-margin{
+      margin: 20px;
+   }
+   .ul-gap{
+      display: flex;
+      gap: 2px;
+   }
+   button#btnViewAll {
+      padding: 5px 10px;
+      background-color: #ddd;
+      border: 0px solid #ccc;
+      width: 150px;
+      height: 45px;
+      text-align: center;
+      cursor: pointer;
+   }
+   .centered {
+      /* Center the container horizontally and vertically */
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
    }
 </style>

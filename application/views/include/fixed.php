@@ -55,25 +55,25 @@
       <div class="row1">
         <div class="gender-group">
           <label class="gender-label">Mr / Mrs / Ms *</label>
-          <input type="text" id="gender_label" name="gender_label" value="" required>
+          <input type="text" id="gender_input" name="gender_label" value="" required>
         </div>
         <div class="first-name-group">
           <label class="first-name-label">First Name *</label>
-          <input type="text" class="form-control" id="first_name" name="first_name" value="" required>
+          <input type="text" class="form-control" id="first_name_input" name="first_name" value="" required>
         </div>
         <div class="last-name-group">
           <label class="last-name-label">Last Name *</label>
-          <input type="text" class="form-control" id="last_name" name="last_name" value="" required>
+          <input type="text" class="form-control" id="last_name_input" name="last_name" value="" required>
         </div>
      </div> 
-     <!-- ferry gendut -->
+     <!-- nover kimak -->
       <div class="row2">
         <div class="email-group">
           <label class="email-label">Email *</label>
-          <input type="text" class="form-control" id="email" name="email" value="">
+          <input type="text" class="form-control" id="email_input" name="email" value="">
         </div>
         <div class="edu-group">
-          <label class="edu-label">Level of Education *</label>
+          <label class="edu-label">Level of Education</label>
           <select name="edu" id="edu" class="form-control my-select" required style="width:100%" required>
           <?php foreach($eduAll as $eduLevel){ ?>
             <option value="<?php echo $eduLevel['edu_level_name'];?>"><?php echo $eduLevel['edu_level_name'];?></option>
@@ -81,7 +81,7 @@
           </select>
         </div>
         <div class="campus-group">
-          <label class="campus-label">Select a SIS campus near you *</label>
+          <label class="campus-label">Select a SIS campus near you</label>
           <select name="campus" id="campus" class="form-control my-select" required style="width:100%" required>
           <?php foreach($arrCampusLists as $campusList){ ?>
             <option value="<?php echo $campusList['campus_name'];?>"><?php echo $campusList['campus_name'];?></option>
@@ -133,17 +133,64 @@ $("#options li").click(function() {
   // Submit the form or perform any other action you need here
 });
 });
+  var genderInput = document.getElementById('gender_input');
+  var firstNameInput = document.getElementById('first_name_input');
+  var lastNameInput = document.getElementById('last_name_input');
+  var emailInput = document.getElementById('email_input');
       function submitForm() {
-       window.open('<?php echo PDF_BASE_URL;?>LSAF.pdf', '_blank').focus();
-            $.ajax({
-                url: '<?php echo BASE_URL;?>/Fixed/saveDataPerson',
-                type: 'post',
-                data: $('#brochureInputForm').serialize(),
-                success: function() {
-                    alert('Data added successfully!');
-                    location.reload();
-                }
-            });
+        var inputValEmpty = "";
+        
+        if (genderInput.value == ''){
+          inputValEmpty = inputValEmpty + "Gender"
+          if(inputValEmpty.length > 0){
+            inputValEmpty = inputValEmpty + ", "
+          }
+        }
+        if (firstNameInput.value == ''){
+          inputValEmpty = inputValEmpty + "Firts Name"
+          if(inputValEmpty.length > 0){
+            inputValEmpty = inputValEmpty + ", "
+          }
+        }
+        if (lastNameInput.value == ''){
+          inputValEmpty = inputValEmpty + "Last Name"
+          if(inputValEmpty.length > 0){
+            inputValEmpty = inputValEmpty + ", "
+          }
+        }
+        if (emailInput.value == ''){
+          inputValEmpty = inputValEmpty + "Email"
+          if(inputValEmpty.length > 0){
+            inputValEmpty = inputValEmpty + ", "
+          }
+        }
+        if(inputValEmpty.length > 0){
+            inputValEmpty = inputValEmpty.slice(0, -2);
+        }
+        if (inputValEmpty.length > 0) {
+          // If any are empty, prevent the form submission and show an error message
+          event.preventDefault();
+          alert('Please enter a value for ' + inputValEmpty + ".");
+        } else if (!validateEmail(emailInput.value)) {
+          // If the email field is not a valid email address, prevent the form submission and show an error message
+          event.preventDefault();
+          alert('Please enter a valid email address.');
+        } else {
+          window.open('<?php echo PDF_BASE_URL;?>LSAF.pdf', '_blank').focus();
+                $.ajax({
+                    url: '<?php echo BASE_URL;?>/Fixed/saveDataPerson',
+                    type: 'post',
+                    data: $('#brochureInputForm').serialize(),
+                    success: function() {
+                        alert('Data added successfully!');
+                        location.reload();
+                    }
+                });
+         } 
+        }
+        function validateEmail(email) {
+          var re = /\S+@\S+\.\S+/;
+          return re.test(email);
         }
 </script>
 
