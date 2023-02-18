@@ -23,10 +23,10 @@ $countSosmed = count($ListSosmed);
 <header>
   <!-- start navigation -->
   <nav class="navbar navbar-default bootsnav background-white navbar-expand-lg">
-    <div class="container nav-header-container">
+    <div class="container nav-header-container" style="padding:10px">
       <!-- start logo -->
       <div class="col-auto pl-0">
-        <a href="https://lsafglobal.com/" target="_blank" title="logo" class="logo">
+        <a href="https://lsafglobal.com/" target="_blank" title="logo" class="logo" style="width:200px;">
           <img src="<?=IMAGES_BASE_URL;?>/logo-color.png" data-rjs="<?=IMAGES_BASE_URL;?>/logo-color.png" class="logo-light default" alt="logo">
         </a>
       </div>
@@ -114,18 +114,18 @@ $countSosmed = count($ListSosmed);
                 </li> 
               </ul>
             </li>
-            <li class="dropdown simple-dropdown"><a href="#">Courses</a><i class="fas fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
-	<!-- start sub menu -->
-	<ul class="dropdown-menu animated fadeOut" role="menu">
-	 <li>
-        <a href='https://lsafglobal.com/Courses/6/62/LSAF Short Courses and Workshops'>LSAF Short Courses and Workshops
-        </a> 
-      </li>            
-      <li>
-        <a href='https://www.lsafglobal.com/Courses/6/78/IGCSEandALevelPrep'>IGCSE and A Level Prep
-        </a> 
-      </li>
-	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="https://lsafglobal.com/Courses/6/30/Profesional Certificate">Professional Certificates <i class="fas fa-angle-right"></i></a>
+            <li class="dropdown simple-dropdown"><a href="#">Programmes</a><i class="fas fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+          <!-- start sub menu -->
+          <ul class="dropdown-menu animated fadeOut" role="menu">
+          <li>
+                <a href='https://lsafglobal.com/Courses/6/62/LSAF Short Courses and Workshops'>LSAF Short Courses and Workshops
+                </a> 
+              </li>            
+              <li>
+                <a href='https://www.lsafglobal.com/Courses/6/78/IGCSEandALevelPrep'>IGCSE and A Level Prep
+                </a> 
+              </li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="https://lsafglobal.com/Courses/6/30/Profesional Certificate">Professional Certificates <i class="fas fa-angle-right"></i></a>
 		<ul class="dropdown-menu animated">
           <li>
             <a href='https://lsafglobal.com/Courses/6/30/68/Introductory in Financial &amp; Management Accounting'>Introductory in Financial &amp; Management Accounting
@@ -156,9 +156,9 @@ $countSosmed = count($ListSosmed);
             <a href='https://lsafglobal.com/Courses/6/35/71/AdvancedDiplomainAccountingandBusiness'>Advanced Diploma in Accounting and Business
             </a>
           </li>
-        </ul>
+    </ul>
       </li> 
-	  <li>
+	    <li>
         <a href='https://lsafglobal.com/Courses/6/63/ACCA Qualifications'>ACCA Qualifications
         </a> 
       </li>            
@@ -170,46 +170,45 @@ $countSosmed = count($ListSosmed);
         <a href='https://lsafglobal.com/Courses/6/65/ACCA-MSc University of London-UOL'>ACCA/ MSc University of London (UOL)
         </a> 
       </li> 
-	  
 	</ul>
-</li>
-  <li class="dropdown simple-dropdown"><a href="#">Students</a><i class="fas fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
-	<!-- start sub menu -->
-	<ul class="dropdown-menu animated fadeOut" role="menu">
-	 <li>
-        <a href='https://lsafglobal.com/Students/7/74/JuniorHighSchoolGraduatesGrade10'>Junior High School Graduates (Grade 10)
-        </a> 
-      </li>            
-      <li>
-        <a href='http://lsafglobal.com/Students/7/75/SeniorHighSchoolGraduatesGrade10-12'>Senior High School Graduates (Grade 10 - 12)
-        </a> 
-      </li>            
-      <li>
-        <a href='https://lsafglobal.com/Students/7/76/UniversityGraduatesandWorkingAdults'>University Graduates and Working Adults
-        </a> 
-      </li>            
-      <li>
-        <a href='https://lsafglobal.com/Students/7/77/Enterpreneurs'>Enterpreneurs
-        </a> 
-      </li> 
-	  
-	</ul>
-</li>          
-            
+  </li>
+            <li class="dropdown simple-dropdown"><a href="#">Students</a><i class="fas fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+              <!-- start sub menu -->
+              <ul class="dropdown-menu animated fadeOut" role="menu">
+              <li>
+                    <a href='https://lsafglobal.com/Students/7/74/JuniorHighSchoolGraduatesGrade10'>Junior High School Graduates (Grade 10)
+                    </a> 
+                  </li>            
+                  <li>
+                    <a href='http://lsafglobal.com/Students/7/75/SeniorHighSchoolGraduatesGrade10-12'>Senior High School Graduates (Grade 10 - 12)
+                    </a> 
+                  </li>            
+                  <li>
+                    <a href='https://lsafglobal.com/Students/7/76/UniversityGraduatesandWorkingAdults'>University Graduates and Working Adults
+                    </a> 
+                  </li>            
+                  <li>
+                    <a href='https://lsafglobal.com/Students/7/77/Enterpreneurs'>Enterpreneurs
+                    </a> 
+                  </li> 
+                
+              </ul>
+            </li>          
+            <li class="">
+              <a href='https://www.lsafglobal.com/Location'>Dual City Learning </a>
+            </li> 
+            <li class="">
+              <a href='#'>Success Story </a>
+            </li>   
             <li class="">
               <a href='https://www.lsafglobal.com/Location'>Contact Us </a>
-            </li>    
-    <li class="">
-              <a href="<?=BASE_URL;?>/blog.html" title="Blog">Blog
-              </a>
-            </li>
-            
+            </li>         
           </ul>
         </div>
       </div>
-      <div class="col-auto pr-lg-0">
+      <!-- <div class="col-auto pr-lg-0" >
         <div class="header-social-icon d-none d-md-inline-block">
-          <?php if($countSosmed > 0){
+         <?php if($countSosmed > 0){
 $i=0;
 foreach($ListSosmed as $loc){  $i++;  
 ?>
@@ -229,10 +228,11 @@ foreach($ListSosmed as $loc){  $i++;
             <i class="fab fa-youtube no-margin-right" aria-hidden="true">
             </i>
           </a>
-          <?php }}?>  
+          <?php }}?>
         </div>
-      </div>
+      </div> -->
     </div>
   </nav>
   <!-- end navigation --> 
 </header>
+

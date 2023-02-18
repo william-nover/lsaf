@@ -87,13 +87,13 @@
             <?php } ?> 
             <?php } ?>
             <?php if (!$email){ ?>
-            <li class='active'><a href='<?php echo BASE_URL;?>/ApplyOnline'>Apply Online</a></li>
+            <!-- <li class='active'><a href='<?php echo BASE_URL;?>/ApplyOnline'>Apply Online</a></li> -->
             <li class='active mylsaf' style="display:none;"><a href='<?php echo BASE_URL;?>/mylsaf'>My LSAF</a></li>
             <?php } 
             else {?>
             <li class='active'><a href='<?php echo BASE_URL;?>/Signin/signout'>Logout</a></li>
             <?php  }?>
-            <li class='active'><a href='<?php echo BASE_URL;?>/blog'>Success Story</a></li>
+            <!-- <li class='active'><a href='<?php echo BASE_URL;?>/blog'>Success Story</a></li> -->
         </ul>
     </div>
 </header>
@@ -130,7 +130,7 @@
         color:white;
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1150px) {
         .arrow{
             /* background-color:#000; */
             display:none;
