@@ -66,7 +66,6 @@
           <input type="text" class="form-control" id="last_name_input" name="last_name" value="" required>
         </div>
      </div> 
-     <!-- nover kimak -->
       <div class="row2">
         <div class="email-group">
           <label class="email-label">Email *</label>
@@ -416,5 +415,130 @@ button#btnSubmit {
 /* Add a box-shadow to mimic a focused input element */
 .my-select:focus {
   box-shadow: 0 0 4px #4a90e2;
+}
+  @media only screen and (max-width:800px) {
+      .row1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: -40px;
+      }
+      .row2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: -40px;
+      }
+      .row3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .modal-content {
+        background-color: #fefefe; /*modal color */
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
+        height: 650px; /* Could be more or less, depending on screen size */
+      }
+      @media only screen and (max-width:300px) {
+          .modal-content {
+            background-color: #fefefe; /*modal color */
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%; /* Could be more or less, depending on screen size */
+            height: 670px; /* Could be more or less, depending on screen size */
+          }
+      }
+      .gender-group {
+          text-align: center;
+          width: 50%;
+      }
+      .gender-label {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-left: 35px;
+      }
+      .first-name-group {
+          text-align: center;
+          width: 50%;
+      }
+      .first-name-label {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-left: 32px;
+      }
+      .last-name-group {
+          text-align: center;
+          width: 50%;
+      }
+      .last-name-label {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-left: 32px;
+      }
+      input[type="text"] {
+        width: 100%;
+      }
+
+      .edu-group {
+          text-align: center;
+          width: 55%;
+      }
+      .edu-group #edu {
+          width: 100%;
+          height: 49px;
+      }
+
+      .edu-label {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-left: 28px;
+      }
+      .email-group {
+          text-align: center;
+          width: 50%;
+      }
+      .email-label {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-left: 32px;
+      }
+      .campus-group {
+          text-align: center;
+          width: 55%;
+          margin-top: 20px;
+          margin-left: -28px;
+      }
+      .campus-group #campus {
+          width: 100%;
+          height: 49px;
+      }
+      .campus-label {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-left: 37px;
+      }
+      button#btnSubmit {
+        padding: 5px 10px;
+        background-color: #ddd;
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 45px;
+        text-align: center;
+        cursor: pointer;
+      }
+  }
 }
 </style>
