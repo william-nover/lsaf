@@ -81,9 +81,13 @@
                <div class="col-md-auto vert-container">
                   <img src="<?= html_entity_decode(contentValue($content, 'images'));?>" alt="<?= html_entity_decode(contentValue($content, 'title'));?>" class="blog-img-circle" data-no-retina=""> 
                   <!-- <a href="<?=$ref;?>"> -->
-                  <a href="https://www.linkedin.com/in/lsafjkt/?originalSubdomain=id">
+                  <!-- <a href="https://www.linkedin.com/in/lsafjkt/?originalSubdomain=id">
                      <label class="linkedin-label">in</label>
+                  </a> -->
+                  <a href="https://www.linkedin.com/in/lsafjkt/?originalSubdomain=id">
+                     <img src="<?=IMAGES_BASE_URL;?>/linkedin_white.png" style="width:80px; height:28px;">
                   </a>
+                  
                </div>
                <div class="col description">
                   <span class="text-uppercase"><?=html_entity_decode(contentValue($content, 'category'))?></span> 

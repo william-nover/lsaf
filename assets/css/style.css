@@ -917,7 +917,7 @@ body {
 }
 
 .apply:hover {
-    background: url(../../assets/images/bg-a1.jpg) repeat-y
+    background: #f4adb6 repeat-y
 }
 
 .apply span:hover {
