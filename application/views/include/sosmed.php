@@ -28,9 +28,9 @@
               </div>
             </div>
             <a href="https://www.youtube.com/@londonschoolofaccountancya5070" style="align-items: center;justify-content: center; height:250px; text-decoration:none;font-color:black;margin-top:10px;vertical-align: baseline" title="London School of Accountancy and Finance">
-              <img src="../../lsaf/assets/images/lsaf_logo.png" alt="lsaf_logo" width="95" height="110" style="display:block;margin-left: auto;margin-right: auto;margin-top:50px;">
+              <img src="../../assets/images/lsaf_logo.png" alt="lsaf_logo" width="95" height="110" style="display:block;margin-left: auto;margin-right: auto;margin-top:50px;">
               <h3 style="display:block;margin-block-start:0em; margin-block-end:0em; font-size:0.9em;margin-left: auto;margin-right: auto;text-align:center;color:black;">London School Of Accountancy and Finance</h3>
-              <img src="../../lsaf/assets/images/yt_large.png" alt="youtube" width="120" height="50" style="display:block;margin-left: auto;margin-right: auto;">
+              <img src="../../assets/images/yt_large.png" alt="youtube" width="120" height="50" style="display:block;margin-left: auto;margin-right: auto;">
             </a>
         </div>
         <div class="space-for-tw">
