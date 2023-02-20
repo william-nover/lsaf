@@ -143,39 +143,39 @@ if ( ! function_exists('index_page'))
 
 // ------------------------------------------------------------------------
 
-// if ( ! function_exists('anchor'))
-// {
-// 	/**
-// 	 * Anchor Link
-// 	 *
-// 	 * Creates an anchor based on the local URL.
-// 	 *
-// 	 * @param	string	the URL
-// 	 * @param	string	the link title
-// 	 * @param	mixed	any attributes
-// 	 * @return	string
-// 	 */
-// 	function anchor($uri = '', $title = '', $attributes = '')
-// 	{
-// 		$title = (string) $title;
+if ( ! function_exists('anchor'))
+{
+	/**
+	 * Anchor Link
+	 *
+	 * Creates an anchor based on the local URL.
+	 *
+	 * @param	string	the URL
+	 * @param	string	the link title
+	 * @param	mixed	any attributes
+	 * @return	string
+	 */
+	function anchor($uri = '', $title = '', $attributes = '')
+	{
+		$title = (string) $title;
 
-// 		$site_url = is_array($uri)
-// 			? site_url($uri)
-// 			: preg_match('#^(\w+:)?//#i', $uri) ? $uri : site_url($uri);
+		$site_url = is_array($uri)
+			? site_url($uri)
+			: preg_match('#^(\w+:)?//#i', $uri) ? $uri : site_url($uri);
 
-// 		if ($title === '')
-// 		{
-// 			$title = $site_url;
-// 		}
+		if ($title === '')
+		{
+			$title = $site_url;
+		}
 
-// 		if ($attributes !== '')
-// 		{
-// 			$attributes = _stringify_attributes($attributes);
-// 		}
+		if ($attributes !== '')
+		{
+			$attributes = _stringify_attributes($attributes);
+		}
 
-// 		return '<a href="'.$site_url.'"'.$attributes.'>'.$title.'</a>';
-// 	}
-// }
+		return '<a href="'.$site_url.'"'.$attributes.'>'.$title.'</a>';
+	}
+}
 
 // ------------------------------------------------------------------------
 

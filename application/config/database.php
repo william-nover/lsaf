@@ -64,9 +64,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '127.0.0.1',
-	'username' => 'root',
-	'password' => '123321',
+	'hostname' => 'localhost',
+	'username' => 'lsafglob_root',
+	'password' => 'Lsaf_Db_P@SSWD',
 	'database' => 'lsafglob_lsafdb',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
