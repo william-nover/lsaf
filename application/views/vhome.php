@@ -32,7 +32,7 @@
         <!-- Jssor Slider End -->
     </div>
     <div class="clear"> </div>
-    <div class="home-intro">
+    <div class="home-intro" style="padding-bottomzzzzz: 20px;">
     	<h1> WHICH PROGRAM IS SUITABLE FOR YOU?</h1>
         <div class="home-intro-left">
         	<h1> PROFESSIONAL CERTIFICATES </h1>
