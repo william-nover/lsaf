@@ -19,7 +19,7 @@
     $arrFooterC = json_decode(file_get_contents($menuFooterC),TRUE);
     $FooterC = $arrFooterC;
 ?>
-<div class="footer-link">
+<!-- <div class="footer-link">
     	<div class="footer-link-1">
         <?php if($FooterAA){  ?>
             <?php $no=1; foreach($FooterAA as $fa){ ?>
@@ -101,7 +101,7 @@
             </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="clear"> </div>
 	<footer>
         <div class="footer-isi">

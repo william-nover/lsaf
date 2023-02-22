@@ -348,7 +348,11 @@ $('.person-responsive').slick({
   ]
 });
 </script> 
+<style>
+  .slick-dots li button:before {
+      margin-top: 42px !important;
+    }
 
- 
+</style>
 </body>
 </html>

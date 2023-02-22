@@ -7,7 +7,7 @@ class Model_fixed extends CI_Model {
         parent::__construct();
     }
 
-	function savePersonBrochure($gender_label, $first_name, $last_name, $email, $edu, $campus){
+	function savePersonBrochure($gender_label, $first_name, $last_name, $email, $edu, $phone){
         // $this->db->insert('tbl_downloaded_brochure', $data);
         $sql	= "INSERT INTO tbl_downloaded_brochure SET 
 					gender_label = '".$gender_label."',
@@ -15,7 +15,7 @@ class Model_fixed extends CI_Model {
 					last_name = '".$last_name."',
 					email = '".$email."',
 					edu = '".$edu."',
-                    campus = '".$campus."',
+                    phone = '".$phone."',
 					created_at = now()";	
 		$query  = $this->db->query($sql);
 	}

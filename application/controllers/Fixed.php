@@ -21,7 +21,7 @@ class Fixed extends MY_Controller {
         $last_name = $this->input->post('last_name');
 		$email = $this->input->post('email');
         $edu = $this->input->post('edu');
-        $campus = $this->input->post('campus');
-		$this->Model_fixed->savePersonBrochure($gender_label, $first_name, $last_name, $email, $edu, $campus);
+        $phone = $this->input->post('phone');
+		$this->Model_fixed->savePersonBrochure($gender_label, $first_name, $last_name, $email, $edu, $phone);
 	}   
 }

@@ -71,19 +71,15 @@
           <label class="email-label">Email *</label>
           <input type="text" class="form-control" id="email_input" name="email" value="">
         </div>
+        <div class="phone-group">
+            <label class="phone-label">Phone *</label>
+            <input type="text" class="form-control" id="phone_input" name="phone" value="">
+          </div>
         <div class="edu-group">
           <label class="edu-label">Level of Education</label>
           <select name="edu" id="edu" class="form-control my-select" required style="width:100%" required>
           <?php foreach($eduAll as $eduLevel){ ?>
             <option value="<?php echo $eduLevel['edu_level_name'];?>"><?php echo $eduLevel['edu_level_name'];?></option>
-            <?php } ?>
-          </select>
-        </div>
-        <div class="campus-group">
-          <label class="campus-label">Select a SIS campus near you</label>
-          <select name="campus" id="campus" class="form-control my-select" required style="width:100%" required>
-          <?php foreach($arrCampusLists as $campusList){ ?>
-            <option value="<?php echo $campusList['campus_name'];?>"><?php echo $campusList['campus_name'];?></option>
             <?php } ?>
           </select>
         </div>
@@ -135,6 +131,7 @@ $("#options li").click(function() {
   var genderInput = document.getElementById('gender_input');
   var firstNameInput = document.getElementById('first_name_input');
   var lastNameInput = document.getElementById('last_name_input');
+  var phoneInput = document.getElementById('phone_input');
   var emailInput = document.getElementById('email_input');
       function submitForm() {
         var inputValEmpty = "";
@@ -157,6 +154,12 @@ $("#options li").click(function() {
             inputValEmpty = inputValEmpty + ", "
           }
         }
+        if (phoneInput.value == ''){
+          inputValEmpty = inputValEmpty + "Phone"
+          if(inputValEmpty.length > 0){
+            inputValEmpty = inputValEmpty + ", "
+          }
+        }
         if (emailInput.value == ''){
           inputValEmpty = inputValEmpty + "Email"
           if(inputValEmpty.length > 0){
@@ -174,6 +177,9 @@ $("#options li").click(function() {
           // If the email field is not a valid email address, prevent the form submission and show an error message
           event.preventDefault();
           alert('Please enter a valid email address.');
+        } else if (isNaN(phoneInput.value)){
+          event.preventDefault();
+          alert('Please enter a valid phone.');
         } else {
           window.open('<?php echo PDF_BASE_URL;?>LSAF.pdf', '_blank').focus();
                 $.ajax({
@@ -295,12 +301,12 @@ input[type="text"] {
 
 .edu-group {
     text-align: center;
-    width: 27%;
+    width: 27.64%;
+    margin-left: 4.7%;
 }
 .edu-group #edu {
     width: 100%;
     height: 49px;
-    margin-left: 22px;
 }
 
 .edu-label {
@@ -322,21 +328,16 @@ input[type="text"] {
   margin-bottom: 10px;
   margin-left: 20px;
 }
-.campus-group {
+.phone-group {
     text-align: center;
-    width: 33%;
+    width: 31%;
 }
-.campus-group #campus {
-    width: 100%;
-    height: 49px;
-    margin-left: 37px;
-}
-.campus-label {
+.phone-label {
   display: inline-block;
   width: 100%;
   text-align: center;
-  margin-bottom: 5px;
-  margin-left: 15px;
+  margin-bottom: 10px;
+  margin-left: 20px;
 }
 
 .row1 {
@@ -491,18 +492,19 @@ button#btnSubmit {
 
       .edu-group {
           text-align: center;
-          width: 55%;
+          width: 55.8%;
+          margin-left: 56px;
       }
       .edu-group #edu {
           width: 100%;
           height: 49px;
       }
-
       .edu-label {
         display: inline-block;
         width: 100%;
         text-align: center;
-        margin-left: 28px;
+        margin-bottom: 5px;
+        margin-left: -1px;
       }
       .email-group {
           text-align: center;
@@ -514,21 +516,15 @@ button#btnSubmit {
         text-align: center;
         margin-left: 32px;
       }
-      .campus-group {
+      .phone-group {
           text-align: center;
-          width: 55%;
-          margin-top: 20px;
-          margin-left: -28px;
+          width: 50%;
       }
-      .campus-group #campus {
-          width: 100%;
-          height: 49px;
-      }
-      .campus-label {
+      .phone-label {
         display: inline-block;
         width: 100%;
         text-align: center;
-        margin-left: 37px;
+        margin-left: 32px;
       }
       button#btnSubmit {
         padding: 5px 10px;
